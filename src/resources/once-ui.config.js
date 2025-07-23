@@ -1,7 +1,7 @@
 import { home } from "./content";
 
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL = "https://demo.magic-portfolio.com";
+const baseURL = "https://dario.warkcorp.com";
 
 const routes = {
   "/": true,
@@ -12,7 +12,7 @@ const routes = {
 };
 
 const display = {
-  location: true,
+  location: false,
   time: true,
   themeSwitcher: true
 };
@@ -175,16 +175,16 @@ const mailchimp = {
 const schema = {
   logo: "",
   type: "Organization",
-  name: "Once UI",
+  name: "Wark Corp",
   description: home.description,
-  email: "lorant@once-ui.com",
+  email: "info@warkcorp.com",
 };
 
 // social links
 const sameAs = {
-  threads: "https://www.threads.com/@once_ui",
-  linkedin: "https://www.linkedin.com/company/once-ui/",
-  discord: "https://discord.com/invite/5EyAQ4eNdS",
+  threads: "https://www.threads.com/@dario57923_",
+  linkedin: "https://www.linkedin.com/company/warkcorp/",
+  discord: "https://discord.com/invite/",
 };
 
 export { display, mailchimp, routes, protectedRoutes, baseURL, fonts, style, schema, sameAs, effects, dataStyle };
