@@ -14,12 +14,12 @@ const person = {
 };
 
 const newsletter = {
-  display: false,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
+  display: true,
+  title: <>¡Suscríbete a mi Newsletter!</>,
   description: (
     <>
-      I occasionally write about design, technology, and share thoughts on the intersection of
-      creativity and engineering.
+      A veces escribo acerca de mis proyectos, tecnología, y comparto cosas relacionadas con
+      ingeniería y noticias.
     </>
   ),
 };
@@ -30,7 +30,7 @@ const social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/WarkCorp",
+    link: "https://github.com/Wark-Corp",
   },
   {
     name: "LinkedIn",
@@ -71,28 +71,28 @@ const home = {
 
 const about = {
   path: "/about",
-  label: "About",
-  title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  label: "Sobre mí",
+  title: `Sobre mí – ${person.name}`,
+  description: `Información acerca de ${person.name} y sus habilidades.`,
   tableOfContent: {
-    display: true,
+    display: false,
     subItems: false,
   },
   avatar: {
     display: true,
   },
   calendar: {
-    display: true,
+    display: false,
     link: "https://cal.com",
   },
   intro: {
     display: true,
-    title: "Introduction",
+    title: "Introducción",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Soy Darío, me dedico a la informática y a la gestión activa o pasiva de comunidades en
+        entornos como Discord, Minecraft, Slack o Telegram. Aparte de la programación y de la
+        moderación, me gusta contribuir a la música que me gusta mediante Musixmatch.
       </>
     ),
   },
@@ -101,41 +101,34 @@ const about = {
     title: "Experiencias",
     experiences: [
       {
-        company: "Wark Corp",
+        company: "Wark Corporation",
         timeframe: "2023 - Presente",
         role: "Fundador & CEO",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Creé la compañía pensando en lo mejor de los usuarios de Discord, buscando mejorar
+            la experiencia de los miembros de los servidores que usen nuestras aplicaciones.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Desde 2023 hemos conseguido la increíble cifra de +160 servidores entre ambas aplicaciones,
+            lo que es más del triple que la mayoría de apliaciones de moderación y seguridad.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Motion Network",
+        timeframe: "2023 - Presente",
+        role: "Fundador & Configurador principal",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Configuré el servidor entero solo con mis conocimientos y con mis propias herramientas.
+            Tengo conocimientos en el sistema de archivos YML, databases como MySQL o MongoDB para
+            gestión de permisos o usuarios. Y mucho más.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Lideré al Equipo de Desarrollo para coordinar el buen funcionamiento del mismo.
+            Aparte durante un tiempo me encargué del Equipo de Staff, con guías y documentación personalizada.
           </>,
         ],
         images: [],
