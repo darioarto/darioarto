@@ -30,17 +30,17 @@ const social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
+    link: "https://github.com/WarkCorp",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/company/warkcorp/",
   },
   {
     name: "Threads",
     icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://www.threads.com/@dario57923_",
   },
   {
     name: "Email",
@@ -52,19 +52,19 @@ const social = [
 const home = {
   path: "/",
   image: "/images/og/home.jpg",
-  label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  label: "Inicio",
+  title: `Portfolio de ${person.name}`,
+  description: `Portfolio personal de Darío.`,
+  headline: <>Desarrolando y moderando desde 2020.</>,
   featured: {
     display: true,
-    title: <>Recent project: <strong className="ml-4">Once UI</strong></>,
+    title: <>Proyecto más reciente: <strong className="ml-4">Wark Corp.</strong></>,
     href: "/work/building-once-ui-a-customizable-design-system",
   },
   subline: (
     <>
-      I'm Selene, a design engineer at <Logo icon="/trademarks/wordmark-dark.svg" style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}/>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      Soy Darío, configurador, desarrollador y Staff avanzado, dónde he aprendido muchas cosas acerca de mejorar
+      <br /> la experiencia del usuario. Después de mucho tiempo, fundé mi empresa con el fin de aprender todo lo posible.
     </>
   ),
 };
