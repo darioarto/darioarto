@@ -106,7 +106,7 @@ const about = {
         role: "Fundador & CEO",
         achievements: [
           <>
-            Creé la compañía pensando en lo mejor de los usuarios de Discord, buscando mejorar
+            Creé la compañía pensando en lo mejor para los usuarios de Discord, buscando mejorar
             la experiencia de los miembros de los servidores que usen nuestras aplicaciones.
           </>,
           <>
