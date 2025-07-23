@@ -18,8 +18,8 @@ const newsletter = {
   title: <>¡Suscríbete a mi Newsletter!</>,
   description: (
     <>
-      A veces escribo acerca de mis proyectos, tecnología, y comparto cosas relacionadas con
-      ingeniería y noticias.
+      A veces escribo acerca de mis proyectos, tecnología y comparto cosas relacionadas con
+      ingeniería o noticias.
     </>
   ),
 };
