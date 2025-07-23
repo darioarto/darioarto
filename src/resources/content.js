@@ -10,7 +10,7 @@ const person = {
   avatar: "/images/avatar.jpg",
   email: "dario@warkcorp.com",
   location: "Europe/Madrid", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["Spanish"], // optional: Leave the array empty if you don't want to display languages
+  languages: ["España"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
@@ -98,12 +98,12 @@ const about = {
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Work Experience",
+    title: "Experiencias",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Wark Corp",
+        timeframe: "2023 - Presente",
+        role: "Fundador & CEO",
         achievements: [
           <>
             Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
