@@ -187,4 +187,4 @@ const work = {
   // All projects will be listed on the /home and /work routes
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, about, blog, work };
