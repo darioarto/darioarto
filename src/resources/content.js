@@ -172,7 +172,7 @@ const about = {
 const blog = {
   path: "/blog",
   label: "Artículos",
-  title: "Escribiendos acerca de novedades y más...",
+  title: "Artículos y Novedades",
   description: `Lee las publicaciones recientes de ${person.name}`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
