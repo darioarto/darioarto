@@ -25,33 +25,34 @@ El cuadro de texto que observas a continuación está hecho para que puedas copi
     ]}
 />
 
-## MDX syntax
+## Código en concreto
 
-You can use MDX to write the content of your posts. It helps you write rich and dynamic content with minimal code. Some MDX elements will be automatically transformed to Once UI components to integrate better in the design and add additional functionality.
-
-## Custom components
-
-You can use custom components in MDX files, but you need to import them first in the `src/components/mdx.tsx` file.
+También en algunos casos verás código resaltado, eso significa que es la parte importante y dónde deberás poner más atención.
 
 <CodeBlock
     marginBottom="16"
-    highlight="11-12"
+    highlight="1-3"
     codes={[
       {
         code:
-`const components = {
-    p: createParagraph as any,
-    h1: createHeading(1) as any,
-    h2: createHeading(2) as any,
-    h3: createHeading(3) as any,
-    h4: createHeading(4) as any,
-    h5: createHeading(5) as any,
-    h6: createHeading(6) as any,
-    img: createImage as any,
-    a: CustomLink as any,
-    Table,
-    CodeBlock,
-};`,
+`let contador = 0;
+let limite = 10;
+let intervalo = setInterval(() => {
+  let numero = Math.random();
+  console.log(`Segundo ${contador + 1}: ${numero}`);
+  contador++;
+  if (contador === limite) {
+    clearInterval(intervalo);
+    console.log("Finalizado");
+  }
+}, 1000);
+
+function saludar(nombre) {
+  return `Hola, ${nombre}`;
+}
+
+console.log(saludar("Darío"));
+`,
         language: "tsx",
         label: "src/components/mdx.tsx"
       }
