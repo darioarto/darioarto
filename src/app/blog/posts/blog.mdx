@@ -19,7 +19,7 @@ El cuadro de texto que observas a continuación está hecho para que puedas copi
       {
         code:
 `Este es un ejemplo de código disponible para copiar.`,
-        language: "tsx",
+        language: "js",
         label: "código de ejemplo"
       }
     ]}
@@ -31,7 +31,7 @@ También en algunos casos verás código resaltado, eso significa que es la part
 
 <CodeBlock
     marginBottom="16"
-    highlight="11-12"
+    highlight="1-2"
     codes={[
       {
         code:
@@ -46,11 +46,9 @@ let intervalo = setInterval(() => {
     console.log("Finalizado");
   }
 }, 1000);
-
 function saludar(nombre) {
   return `Hola, ${nombre}`;
 }
-
 console.log(saludar("Darío"));
 `,
         language: "js",
@@ -59,8 +57,4 @@ console.log(saludar("Darío"));
     ]}
 />
 
-As you can see, the `Table` and `CodeBlock` components are already imported and available for use. You can add more by simply importing them to this file and passing them to the `components` object.
-
-## Hot reload
-
-Hot reload of MDX files is currently not supported, but we're working on it.
+Eso fue todo por hoy, iremos actualizando toda la sección con tutoriales.
