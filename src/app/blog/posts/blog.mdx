@@ -31,26 +31,15 @@ También en algunos casos verás código resaltado, eso significa que es la part
 
 <CodeBlock
     marginBottom="16"
-    highlight="1-2"
+    highlight="2-3"
     codes={[
       {
         code:
-`let contador = 0;
-let limite = 10;
-let intervalo = setInterval(() => {
-  let numero = Math.random();
-  console.log(`Segundo ${contador + 1}: ${numero}`);
-  contador++;
-  if (contador === limite) {
-    clearInterval(intervalo);
-    console.log("Finalizado");
-  }
-}, 1000);
-function saludar(nombre) {
-  return `Hola, ${nombre}`;
-}
-console.log(saludar("Darío"));
-`,
+`let x = 10;
+let y = 5;
+let suma = x + y;
+console.log("Resultado:", suma);
+console.log("Fin del programa");`,
         language: "js",
         label: "src/ejemplo.js"
       }
