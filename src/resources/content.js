@@ -128,7 +128,7 @@ const about = {
           </>,
           <>
             Lideré al Equipo de Desarrollo para coordinar el buen funcionamiento del mismo.
-            Aparte durante un tiempo me encargué del Equipo de Staff, con guías y documentación personalizada.
+            Aparte, durante un tiempo me encargué del Equipo de Staff, con guías y documentación personalizada.
           </>,
         ],
         images: [],
