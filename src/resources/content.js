@@ -8,13 +8,13 @@ const person = {
   },
   role: "Staff & Desarrollador",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
+  email: "dario@warkcorp.com",
   location: "Europe/Madrid", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  languages: ["Spanish"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: (
     <>
