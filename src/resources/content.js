@@ -6,19 +6,20 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Staff & Desarrollador de software",
+  role: "Staff & Desarrollador",
   avatar: "/images/avatar.jpg",
-  email: "dario@warkcorp.com",
+  email: "example@gmail.com",
   location: "Europe/Madrid", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["Spanish", "English"], // optional: Leave the array empty if you don't want to display languages
+  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
   display: true,
-  title: <>¡Suscríbete a mi Newsletter!</>,
+  title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: (
     <>
-      Suelo escribir acerca de novedades, tecnológia, y noticias interesantes relacionadas con alguno de mis proyectos.
+      I occasionally write about design, technology, and share thoughts on the intersection of
+      creativity and engineering.
     </>
   ),
 };
@@ -29,17 +30,17 @@ const social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/WarkCorp",
+    link: "https://github.com/once-ui-system/nextjs-starter",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/warkcorp/",
+    link: "https://www.linkedin.com/company/once-ui/",
   },
   {
     name: "Threads",
     icon: "threads",
-    link: "https://www.threads.com/@dario57923_",
+    link: "https://www.threads.com/@once_ui",
   },
   {
     name: "Email",
@@ -51,28 +52,28 @@ const social = [
 const home = {
   path: "/",
   image: "/images/og/home.jpg",
-  label: "Inicio",
-  title: `${person.name}' - Portfolio`,
-  description: `Portfolio de Darío A.`,
-  headline: <>Mejorando como configurador en Discord desde 2021</>,
+  label: "Home",
+  title: `${person.name}'s Portfolio`,
+  description: `Portfolio website showcasing my work as a ${person.role}`,
+  headline: <>Building bridges between design and code</>,
   featured: {
     display: true,
-    title: <>Proyecto reciente: <strong className="ml-4">WarkCorp</strong></>,
+    title: <>Recent project: <strong className="ml-4">Once UI</strong></>,
     href: "/work/building-once-ui-a-customizable-design-system",
   },
   subline: (
     <>
-      Somos el equipo de Wark, diseñamos los mejor para ti y tu <Logo icon="/trademarks/wordmark-dark.svg" style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}/>, where I craft intuitive
-      <br /> comunidad. Después de mucho trabajo y sacrificio, lanzamos oficialmente nuestra web.
+      I'm Selene, a design engineer at <Logo icon="/trademarks/wordmark-dark.svg" style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}/>, where I craft intuitive
+      <br /> user experiences. After hours, I build my own projects.
     </>
   ),
 };
 
 const about = {
   path: "/about",
-  label: "Acerca De",
-  title: `Acerca De – ${person.name}`,
-  description: `Concierta una cita con ${person.name}, ${person.role} from ${person.location}`,
+  label: "About",
+  title: `About – ${person.name}`,
+  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -82,38 +83,44 @@ const about = {
   },
   calendar: {
     display: true,
-    link: "https://dsc.gg/wark",
+    link: "https://cal.com",
   },
   intro: {
     display: true,
-    title: "Introducción",
+    title: "Introduction",
     description: (
       <>
-        Soy Darío, me dedico a programar y moderar en Minecraft y Discord activamente,
-        dedico mucho de mi tiempo libre a todo eso, y hasta ahora me va bien.
-        Tengo muchas experiencias en distinos proyectos a lo largo de todos estos años.
+        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
+        into simple, elegant design solutions. Her work spans digital interfaces, interactive
+        experiences, and the convergence of design and technology.
       </>
     ),
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Experiencia",
+    title: "Work Experience",
     experiences: [
       {
-        company: "Wark Corporation",
-        timeframe: "2023 - Presente",
-        role: "Fundador, CEO & Desarrollador",
+        company: "FLY",
+        timeframe: "2022 - Present",
+        role: "Senior Design Engineer",
         achievements: [
           <>
-            Creé la compañía para mejorar la experiencia de los usuarios en Discord, logré que nuestras aplicaciones se usen en +90 servidores y comunidades.
+            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
+            engagement and 30% faster load times.
           </>,
           <>
-            Mejoré la seguridad de todos mis proyectos y aprendí mucho por el camino, todo gracias a Wark.
+            Spearheaded the integration of AI tools into design workflows, enabling designers to
+            iterate 50% faster.
           </>,
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
           {
+            src: "/images/projects/project-01/cover-01.jpg",
+            alt: "Once UI Project",
+            width: 16,
+            height: 9,
           },
         ],
       },
