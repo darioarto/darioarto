@@ -27,11 +27,11 @@ export const Footer = () => {
           <Text paddingX="4">{person.name}</Text>
           <Text onBackground="neutral-weak">
             {/* Usage of this template requires attribution. Please don't remove the link to Once UI. */}
-            / Desarrolladora por{" "}
+            / Desarrollado por{" "}
             <SmartLink
               href="https://warkcorp.com"
             >
-              Warkcorp
+              WarkCorp.
             </SmartLink>
           </Text>
         </Text>
