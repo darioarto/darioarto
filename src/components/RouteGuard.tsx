@@ -102,7 +102,7 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
             onChange={(e) => setPassword(e.target.value)}
             errorMessage={error}
           />
-          <Button onClick={handlePasswordSubmit}>Submit</Button>
+          <Button onClick={handlePasswordSubmit}>Acceder</Button>
         </Column>
       </Column>
     );
