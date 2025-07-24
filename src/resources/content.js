@@ -55,7 +55,7 @@ const home = {
   label: "Inicio",
   title: `Portfolio de ${person.name}`,
   description: `Portfolio personal de Darío.`,
-  headline: <>Desarrolando y moderando desde 2020.</>,
+  headline: <>Desarrollando y moderando desde 2020.</>,
   featured: {
     display: true,
     title: <>Proyecto más reciente: <strong className="ml-4">Wark Corp.</strong></>,
