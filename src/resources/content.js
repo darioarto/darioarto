@@ -59,7 +59,7 @@ const home = {
   featured: {
     display: true,
     title: <>Proyecto más reciente: <strong className="ml-4">Wark Corp.</strong></>,
-    href: "/work/building-once-ui-a-customizable-design-system",
+    href: "/work/wark",
   },
   subline: (
     <>
