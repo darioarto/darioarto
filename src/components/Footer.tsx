@@ -31,7 +31,7 @@ export const Footer = () => {
             <SmartLink
               href="https://warkcorp.com"
             >
-              WarkCorp.
+              Wark Corp.
             </SmartLink>
           </Text>
         </Text>
