@@ -76,13 +76,13 @@ Solo edita la sección de `port: 19132` y **coloca tu puerto libre** (atención,
 />
 
 Tendrías que tener en `auth-type:` **floodgate**, para que funcione correctamente. El resto del archivo te recomiendo no modificarlo si no sabes lo que estás haciendo, porque puedes hacer que no funcione y los jugadores de Bedrock no puedan entrar.
-- 4. **Guarda los cambios y reinica el servidor.**
+- 4. Guarda los cambios y reinica el servidor.
 - 5. Ahora instala **Geyser** y **Floodgate** en tus otros servidores (por ejemplo; Lobby, Survival, Minijuegos, BoxPvP, etc) siguiendo los mismo pasos que hasta ahora, dónde quieras que se conecten los jugadores de Bedrock instala los plugins.
 - 6. Viene un paso importante para que funcione todo lo que hicimos hasta ahora, ve al Proxy y descarga el archivo `key.pem`, ubicado normalmente en `/home/container/plugins/floodgate`. Y en los otros servidores elimina ese archivo de la misma carpeta y sustitúyelo por el que descargaste del Proxy. El archivo `key.pem` es la llave que hace posible que los jugadores de Bedrock puedan conectarse al Lobby u otras modalidades que tengas. Sin eso bien configurado, los jugadores de Bedrock solo podrán conectarse al Proxy y les saldrá un error de conexión.
 
 Sobra decir que cuando hagas cambios tanto en el Proxy como en otro servidores, reincies el servidor para aplicar los cambios y que se vean reflejados en el servidor.
 
-## Opcional: Cambiar el prefijo de los jugadores de Bedrock
+## Paso 4: Cambiar el prefijo de los jugadores de Bedrock (Opcional)
 Puedes cambiar el prefijo que aparecerá delante del nombre del jugador para diferenciarlo del resto de jugadores de Java.
 Esto se hace desde el **archivo de configuración de Floodgate**: `/home/container/plugins/floodgate/config.yml`:
 
