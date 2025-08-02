@@ -160,7 +160,7 @@ const about = {
         images: [],
       },
       {
-        title: "Java, Javascript y Phyton",
+        title: "Java, Javascript y Python",
         description: <>También tengo conocimiento de programación en todo tipo de Java. Incluyendo la creación de plugins de Minecraft sencillos.</>,
         // optional: leave the array empty if you don't want to display images
         images: [],
