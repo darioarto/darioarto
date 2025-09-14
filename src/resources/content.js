@@ -101,6 +101,22 @@ const about = {
     title: "Experiencias",
     experiences: [
       {
+        company: "XeroHost (XeroGroup LLC)",
+        timeframe: "2024 - Presente",
+        role: "Director de Operaciones (COO)",
+        achievements: [
+          <>
+            Decidí formar parte de XeroHost para apoyar a todos los clientes y para dar soporte
+            en general.
+          </>,
+          <>
+            Después, cuando comencé a formar parte de los ejecutivos, me centré en mantener una
+            infraestructura sólida y lo más rápida posible.
+          </>,
+        ],
+        images: [],
+      },
+      {
         company: "Wark Corporation",
         timeframe: "2023 - Presente",
         role: "Fundador & CEO",
@@ -123,7 +139,7 @@ const about = {
         achievements: [
           <>
             Configuré el servidor entero solo con mis conocimientos y con mis propias herramientas.
-            Tengo conocimientos en el sistema de archivos YML, databases como MySQL o MongoDB para
+            Tengo conocimientos en el sistema de archivos YML, databases como MySQL o MariaDB para
             gestión de permisos o usuarios. Y mucho más.
           </>,
           <>
