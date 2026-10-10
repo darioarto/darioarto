@@ -21,7 +21,7 @@ name: Darío Arto
 role: COO & SysAdmin
 company: XeroHost (XeroGroup LLC)
 focus: VPS & Game Server Hosting
-scope: Systems · Networking · Automation
+scope: Systems - Networking - Automation
 based_in: Spain
 ```
 
@@ -33,8 +33,8 @@ based_in: Spain
 ```json
 {
   "working_on": [
-    "XeroHost infrastructure",
-    "Wark Corp products",
+    "XeroHost",
+    "Wark Corp",
     "CosmixMC Network"
   ],
   "learning": "Advanced networking",
