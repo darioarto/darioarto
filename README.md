@@ -3,7 +3,7 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&height=180&color=0:0D1117,100:1F2937&text=Dar%C3%ADo%20Arto&fontColor=FFFFFF&fontSize=46&fontAlignY=38&desc=COO%20%2F%20SysAdmin%20%40XeroHost&descAlignY=58&descSize=18" width="100%"/>
 
 <a href="https://xerohost.net">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&duration=3000&pause=1000&color=8B949E&center=true&vCenter=true&width=600&lines=Systems+%26+Network+Administration;Infrastructure+%26+Automation;Building+XeroHost+%26+Wark+Corp" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&duration=3000&pause=1000&color=8B949E&center=true&vCenter=true&width=600&lines=Systems+%26+Network+Administration;Infrastructure+%26+Automation;Building+XeroHost" alt="Typing SVG" />
 </a>
 
 </div>
