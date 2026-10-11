@@ -17,9 +17,10 @@
 
 <br/>
 
+<div align="center">
 <table>
 <tr>
-<td width="50%" valign="top">
+<td width="50%" valign="top" align="left">
 
 #### `$ cat whoami.yml`
 
@@ -36,7 +37,7 @@ off_hours: Curator @ Musixmatch
 ```
 
 </td>
-<td width="50%" valign="top">
+<td width="50%" valign="top" align="left">
 
 #### `$ cat now.json`
 
@@ -52,6 +53,7 @@ off_hours: Curator @ Musixmatch
 </td>
 </tr>
 </table>
+</div>
 
 ### `$ ls ~/projects`
 
