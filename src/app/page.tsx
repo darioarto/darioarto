@@ -71,6 +71,7 @@ export default function Home() {
               </Button>
               {routes["/work"] && (
                 <Button
+                  id="home-projects"
                   href={work.path}
                   prefixIcon="grid"
                   label={work.label}
@@ -82,6 +83,7 @@ export default function Home() {
               )}
               {routes["/blog"] && (
                 <Button
+                  id="home-blog"
                   href={blog.path}
                   prefixIcon="book"
                   label={blog.label}
