@@ -64,6 +64,7 @@ export default function Home() {
                       style={{ marginLeft: "-0.75rem" }}
                       src={person.avatar}
                       size="m"
+                      border="transparent"
                     />
                   )}
                   {about.title}
