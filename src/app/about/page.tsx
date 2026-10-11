@@ -199,7 +199,7 @@ export default function About() {
                   <Row key={`${experience.company}-${experience.role}-${index}`} fillWidth gap="20">
                     <Column className={styles.rail} horizontal="center">
                       <span className={styles.dot} />
-                      <span className={styles.line} />
+                      {index < about.work.experiences.length - 1 && <span className={styles.line} />}
                     </Column>
                     <Column fillWidth paddingBottom="40">
                       <Row fillWidth horizontal="between" vertical="center" gap="12" wrap marginBottom="4">
