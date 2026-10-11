@@ -53,7 +53,7 @@ based_in: Spain
 <div align="center">
 
 <a href="https://xerohost.net"><img src="https://img.shields.io/badge/XeroHost-COO_%26_SysAdmin-0D1117?style=for-the-badge&logo=serverfault&logoColor=white&labelColor=161B22" /></a>
-<a href="https://warkcorp.com"><img src="https://img.shields.io/badge/Wark_Corp-Founder-&-CEO-0D1117?style=for-the-badge&logo=rocket&logoColor=white&labelColor=161B22" /></a>
+<a href="https://warkcorp.com"><img src="https://img.shields.io/badge/Wark_Corp-CEO-0D1117?style=for-the-badge&logo=rocket&logoColor=white&labelColor=161B22" /></a>
 <img src="https://img.shields.io/badge/CosmixMC_Network-Owner-0D1117?style=for-the-badge&logo=minecraft&logoColor=white&labelColor=161B22" />
 
 </div>
