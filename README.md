@@ -84,8 +84,8 @@ off_hours: Curator @ Musixmatch
 </td>
 <td width="50%" align="center" valign="top">
 <br/>
-<img src=".github/readme/vynk.png" width="56" height="56" alt="Vynk Social"/>
-<h4>Vynk Social</h4>
+<a href="https://vynk.social"><img src=".github/readme/vynk.png" width="56" height="56" alt="Vynk Social"/></a>
+<h4><a href="https://vynk.social">Vynk Social</a></h4>
 <code>Founder & Developer</code><br/><sub>2026 - Present</sub>
 <p>A new social network in development under Wark Corp.</p>
 </td>
