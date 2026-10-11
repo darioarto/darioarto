@@ -3,7 +3,7 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&height=210&color=0:070D18,55:0B2236,100:0E7490&text=Dar%C3%ADo%20Arto&fontColor=E6F6FF&fontSize=58&fontAlignY=36&desc=SysAdmin%20%26amp%3B%20Developer&descAlignY=58&descSize=18" width="100%" alt="Darío Arto — SysAdmin & Developer"/>
 
 <a href="https://dario.warkcorp.com">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=18&duration=2600&pause=900&color=22D3EE&center=true&vCenter=true&width=640&lines=~%2Fdario+%24+whoami;Systems+%26+network+administration;VPS+%26+game+server+infrastructure;COO+%40+XeroHost+%C2%B7+Founder+%40+Wark+Corp." alt="Systems & network administration · VPS & game server infrastructure · COO @ XeroHost · Founder @ Wark Corp."/>
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=18&duration=2600&pause=900&color=22D3EE&center=true&vCenter=true&width=640&lines=~%2Fdario+%24+whoami;Systems+%26+Network+Administration;VPS+%26+Game+Server+Infrastructure;COO+%40+XeroHost+%C2%B7+Founder+%40+Wark+Corp." alt="Systems & Network Administration · VPS & Game Server Infrastructure · COO @ XeroHost · Founder @ Wark Corp."/>
 </a>
 
 <br/><br/>
