@@ -34,9 +34,9 @@ export default function Home() {
       />
       <Column fillWidth paddingY="24" gap="m">
         <Column maxWidth="s">
-          <RevealFx fillWidth horizontal="start" paddingTop="16" paddingBottom="24">
+          <Flex fillWidth horizontal="start" paddingTop="16" paddingBottom="24">
             <Prompt command="whoami" />
-          </RevealFx>
+          </Flex>
           <RevealFx translateY="4" fillWidth horizontal="start" paddingBottom="16">
             <Heading wrap="balance" variant="display-strong-l">
               {home.headline}
