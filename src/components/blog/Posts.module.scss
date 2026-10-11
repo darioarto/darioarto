@@ -1,5 +1,5 @@
 .card {
-    transition: border-color var(--transition-micro-medium);
+    transition: border-color var(--transition-duration-micro-long) var(--transition-eased);
 
     &:hover {
         border-color: var(--brand-alpha-medium);
