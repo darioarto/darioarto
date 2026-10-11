@@ -118,6 +118,25 @@ function createParagraph({ children }: TextProps) {
   );
 }
 
+// Lists share the paragraph styling so they don't stand out from the surrounding text
+function createList(as: "ul" | "ol") {
+  const List = ({ children }: { children: ReactNode }) => (
+    <Column as={as} gap="4" marginTop="8" marginBottom="12" paddingLeft="20">
+      {children}
+    </Column>
+  );
+  List.displayName = as;
+  return List;
+}
+
+function createListItem({ children }: { children: ReactNode }) {
+  return (
+    <Text as="li" style={{ lineHeight: "175%" }} variant="body-default-m" onBackground="neutral-medium">
+      {children}
+    </Text>
+  );
+}
+
 function createInlineCode({ children }: { children: ReactNode }) {
   return <InlineCode>{children}</InlineCode>;
 }
@@ -153,6 +172,9 @@ function createCodeBlock(props: any) {
 
 const components = {
   p: createParagraph as any,
+  ul: createList("ul") as any,
+  ol: createList("ol") as any,
+  li: createListItem as any,
   h1: createHeading("h1") as any,
   h2: createHeading("h2") as any,
   h3: createHeading("h3") as any,
