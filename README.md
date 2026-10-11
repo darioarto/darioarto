@@ -61,14 +61,14 @@ off_hours: Curator @ Musixmatch
 <br/>
 <a href="https://xerohost.net"><img src=".github/readme/xerohost.png" width="56" height="56" alt="XeroHost"/></a>
 <h4><a href="https://xerohost.net">XeroHost</a></h4>
-<code>COO & SysAdmin</code><br/><sub>2025 — Present</sub>
+<code>COO & SysAdmin</code><br/><sub>2025 - Present</sub>
 <p>VPS & game server hosting, part of XeroGroup LLC (AS216102), with infrastructure in Miami, Dallas and São Paulo.</p>
 </td>
 <td width="50%" align="center" valign="top">
 <br/>
 <a href="https://warkcorp.com"><img src=".github/readme/wark.png" width="56" height="56" alt="Wark Corp."/></a>
 <h4><a href="https://warkcorp.com">Wark Corp.</a></h4>
-<code>Founder & CEO</code><br/><sub>2023 — Present</sub>
+<code>Founder & CEO</code><br/><sub>2023 - Present</sub>
 <p>Moderation and security apps for Discord, Wark and WarkGuard, used on 160+ servers.</p>
 </td>
 </tr>
@@ -77,14 +77,14 @@ off_hours: Curator @ Musixmatch
 <br/>
 <a href="https://discord.cosmixmc.net"><img src=".github/readme/cosmixmc.png" width="56" height="56" alt="CosmixMC Network"/></a>
 <h4><a href="https://discord.cosmixmc.net">CosmixMC Network</a></h4>
-<code>Founder, Owner & Lead Developer</code><br/><sub>2023 — Present</sub>
+<code>Founder, Owner & Lead Developer</code><br/><sub>2023 - Present</sub>
 <p>Minecraft network I founded in 2023 and have led ever since as owner and lead developer.</p>
 </td>
 <td width="50%" align="center" valign="top">
 <br/>
 <img src=".github/readme/vynk.png" width="56" height="56" alt="Vynk Social"/>
 <h4>Vynk Social</h4>
-<code>Founder & Developer</code><br/><sub>2026 — Present</sub>
+<code>Founder & Developer</code><br/><sub>2026 - Present</sub>
 <p>A new social network in development under Wark Corp.</p>
 </td>
 </tr>
