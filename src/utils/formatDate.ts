@@ -6,23 +6,21 @@ export function formatDate(date: string, includeRelative = false) {
   }
 
   const targetDate = new Date(date);
-  const yearsAgo = currentDate.getFullYear() - targetDate.getFullYear();
-  const monthsAgo = currentDate.getMonth() - targetDate.getMonth();
-  const daysAgo = currentDate.getDate() - targetDate.getDate();
+  const daysAgo = Math.floor((currentDate.getTime() - targetDate.getTime()) / 86_400_000);
 
   let formattedDate = "";
 
-  if (yearsAgo > 0) {
-    formattedDate = `hace ${yearsAgo}a`;
-  } else if (monthsAgo > 0) {
-    formattedDate = `hace ${monthsAgo}m`;
+  if (daysAgo >= 365) {
+    formattedDate = `hace ${Math.floor(daysAgo / 365)}a`;
+  } else if (daysAgo >= 30) {
+    formattedDate = `hace ${Math.floor(daysAgo / 30)}m`;
   } else if (daysAgo > 0) {
     formattedDate = `hace ${daysAgo}d`;
   } else {
     formattedDate = "Hoy";
   }
 
-  const fullDate = targetDate.toLocaleString("en-us", {
+  const fullDate = targetDate.toLocaleString("es-ES", {
     month: "long",
     day: "numeric",
     year: "numeric",

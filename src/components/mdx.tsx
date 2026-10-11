@@ -187,6 +187,12 @@ type CustomMDXProps = MDXRemoteProps & {
 
 export function CustomMDX(props: CustomMDXProps) {
   return (
-    <MDXRemote {...props} components={{ ...components, ...(props.components || {}) }} />
+    <MDXRemote
+      {...props}
+      // Local MDX content is trusted: allow JS expressions (e.g. CodeBlock `codes={[...]}`)
+      // while still blocking dangerous globals like eval/require.
+      options={{ blockJS: false, blockDangerousJS: true, ...props.options }}
+      components={{ ...components, ...(props.components || {}) }}
+    />
   );
 }

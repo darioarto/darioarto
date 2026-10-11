@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import * as cookie from "cookie";
+import { AUTH_COOKIE, getAuthToken } from "@/utils/auth";
 
 export async function POST(request: NextRequest) {
-  const body = await request.json();
+  const body = await request.json().catch(() => ({}));
   const { password } = body;
   const correctPassword = process.env.PAGE_ACCESS_PASSWORD;
 
@@ -16,7 +17,7 @@ export async function POST(request: NextRequest) {
     
     response.headers.set(
       "Set-Cookie",
-      cookie.serialize("authToken", "authenticated", {
+      cookie.serialize(AUTH_COOKIE, getAuthToken(correctPassword), {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
         maxAge: 60 * 60,
