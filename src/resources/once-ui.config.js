@@ -130,7 +130,7 @@ const effects = {
 const schema = {
   logo: "",
   type: "Person",
-  name: "Darío A.",
+  name: "Darío Arto",
   description: home.description,
   email: "dario@xerohost.net",
 };
