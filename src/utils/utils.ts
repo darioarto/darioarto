@@ -22,7 +22,6 @@ type Metadata = {
   role?: string;
   period?: string;
   status?: string;
-  stack: string[];
   logo?: string;
   /** Show the logo as a rounded app-style tile (for logos with their own background) */
   logoTile?: boolean;
@@ -58,7 +57,6 @@ function readMDXFile(filePath: string) {
     role: data.role || "",
     period: data.period || "",
     status: data.status || "",
-    stack: data.stack || [],
     logo: data.logo || "",
     logoTile: data.logoTile || false,
   };

@@ -34,7 +34,6 @@ export function Projects({ range, columns = "1" }: ProjectsProps) {
           role={post.metadata.role}
           period={post.metadata.period}
           status={post.metadata.status}
-          stack={post.metadata.stack}
           logo={post.metadata.logo}
           logoTile={post.metadata.logoTile}
         />

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getPosts } from "@/utils/utils";
-import { Meta, Schema, AvatarGroup, Button, Column, Flex, Heading, Media, Row, StatusIndicator, Tag, Text } from "@once-ui-system/core";
+import { Meta, Schema, AvatarGroup, Button, Column, Flex, Heading, Media, Row, StatusIndicator, Text } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
 import { ScrollToHash, CustomMDX } from "@/components";
@@ -77,21 +77,10 @@ export default async function Project({
         <Button data-border="rounded" href="/work" variant="tertiary" weight="default" size="s" prefixIcon="chevronLeft">
           Projects
         </Button>
-        <Row gap="20" vertical="center">
-          {post.metadata.logo && (
-            <ProjectLogo
-              src={post.metadata.logo}
-              alt={`${post.metadata.title} logo`}
-              tile={post.metadata.logoTile}
-              size="l"
-            />
-          )}
-          <Heading variant="display-strong-s">{post.metadata.title}</Heading>
-        </Row>
-        {(post.metadata.period || post.metadata.role || post.metadata.status) && (
+        {(post.metadata.period || post.metadata.status) && (
           <Row gap="12" vertical="center" wrap>
             <Text family="code" variant="label-default-s" onBackground="neutral-weak">
-              {[post.metadata.period, post.metadata.role].filter(Boolean).join(" · ")}
+              {post.metadata.period}
             </Text>
             {post.metadata.status && (
               <Row gap="8" vertical="center">
@@ -107,13 +96,25 @@ export default async function Project({
             )}
           </Row>
         )}
-        {post.metadata.stack.length > 0 && (
-          <Row gap="8" wrap>
-            {post.metadata.stack.map((item) => (
-              <Tag key={item} size="s" variant="neutral" label={item} />
-            ))}
-          </Row>
-        )}
+        <Row gap="20" vertical="center">
+          {post.metadata.logo && (
+            <ProjectLogo
+              src={post.metadata.logo}
+              alt={`${post.metadata.title} logo`}
+              tile={post.metadata.logoTile}
+              size="l"
+              priority
+            />
+          )}
+          <Column gap="4">
+            <Heading variant="display-strong-s">{post.metadata.title}</Heading>
+            {post.metadata.role && (
+              <Text variant="body-default-m" onBackground="brand-weak">
+                {post.metadata.role}
+              </Text>
+            )}
+          </Column>
+        </Row>
       </Column>
       {post.metadata.images.length > 0 && (
         <Media

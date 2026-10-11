@@ -8,7 +8,6 @@ import {
   Row,
   SmartLink,
   StatusIndicator,
-  Tag,
   Text,
 } from "@once-ui-system/core";
 import styles from "./ProjectCard.module.scss";
@@ -26,7 +25,6 @@ interface ProjectCardProps {
   role?: string;
   period?: string;
   status?: string;
-  stack?: string[];
   logo?: string;
   logoTile?: boolean;
 }
@@ -45,12 +43,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   role,
   period,
   status,
-  stack = [],
   logo,
   logoTile,
 }) => {
-  const meta = [period, role].filter(Boolean).join(" · ");
-
   return (
     <Column
       as="article"
@@ -72,10 +67,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         />
       )}
       <Column fillWidth flex={1} padding="24" gap="16">
-        {(meta || status) && (
+        {(period || status) && (
           <Row fillWidth horizontal="between" vertical="center" gap="12" wrap>
             <Text family="code" variant="label-default-s" onBackground="neutral-weak">
-              {meta}
+              {period}
             </Text>
             {status && (
               <Row gap="8" vertical="center">
@@ -89,22 +84,22 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         )}
         <Row gap="16" vertical="center">
           {logo && <ProjectLogo src={logo} alt={`${title} logo`} tile={logoTile} />}
-          <Heading as="h2" wrap="balance" variant="heading-strong-xl">
-            {title}
-          </Heading>
+          <Column gap="2">
+            <Heading as="h2" wrap="balance" variant="heading-strong-xl">
+              {title}
+            </Heading>
+            {role && (
+              <Text variant="body-default-s" onBackground="brand-weak">
+                {role}
+              </Text>
+            )}
+          </Column>
         </Row>
         {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
         {description?.trim() && (
           <Text wrap="balance" variant="body-default-m" onBackground="neutral-weak">
             {description}
           </Text>
-        )}
-        {stack.length > 0 && (
-          <Row gap="8" wrap>
-            {stack.map((item) => (
-              <Tag key={item} size="s" variant="neutral" label={item} />
-            ))}
-          </Row>
         )}
         <Row gap="24" wrap paddingTop="8" style={{ marginTop: "auto" }}>
           {content?.trim() && (
