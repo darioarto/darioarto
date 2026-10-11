@@ -23,6 +23,9 @@ type Metadata = {
   period?: string;
   status?: string;
   stack: string[];
+  logo?: string;
+  /** Show the logo as a rounded app-style tile (for logos with their own background) */
+  logoTile?: boolean;
 };
 
 import { notFound } from 'next/navigation';
@@ -56,6 +59,8 @@ function readMDXFile(filePath: string) {
     period: data.period || "",
     status: data.status || "",
     stack: data.stack || [],
+    logo: data.logo || "",
+    logoTile: data.logoTile || false,
   };
 
   return { metadata, content };

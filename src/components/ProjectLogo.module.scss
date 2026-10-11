@@ -1,0 +1,27 @@
+// Every logo sits in the same fixed square so cards line up symmetrically.
+.logo {
+  flex-shrink: 0;
+  object-fit: contain;
+  border-radius: var(--radius-m);
+  border: 1px solid var(--neutral-alpha-medium);
+  // Transparent logos get a soft backdrop and some breathing room inside the square
+  padding: 6px;
+  background: var(--neutral-alpha-weak);
+}
+
+.m {
+  width: 40px;
+  height: 40px;
+}
+
+.l {
+  width: 56px;
+  height: 56px;
+}
+
+// Logos with their own background fill the square edge to edge
+.tile {
+  padding: 0;
+  background: none;
+  object-fit: cover;
+}

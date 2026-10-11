@@ -4,6 +4,7 @@ import { Meta, Schema, AvatarGroup, Button, Column, Flex, Heading, Media, Row, S
 import { baseURL, about, person, work } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
 import { ScrollToHash, CustomMDX } from "@/components";
+import { ProjectLogo } from "@/components/ProjectLogo";
 import { Metadata } from "next";
 
 // Only the generated slugs exist; anything else is a real 404.
@@ -76,7 +77,17 @@ export default async function Project({
         <Button data-border="rounded" href="/work" variant="tertiary" weight="default" size="s" prefixIcon="chevronLeft">
           Projects
         </Button>
-        <Heading variant="display-strong-s">{post.metadata.title}</Heading>
+        <Row gap="20" vertical="center">
+          {post.metadata.logo && (
+            <ProjectLogo
+              src={post.metadata.logo}
+              alt={`${post.metadata.title} logo`}
+              tile={post.metadata.logoTile}
+              size="l"
+            />
+          )}
+          <Heading variant="display-strong-s">{post.metadata.title}</Heading>
+        </Row>
         {(post.metadata.period || post.metadata.role || post.metadata.status) && (
           <Row gap="12" vertical="center" wrap>
             <Text family="code" variant="label-default-s" onBackground="neutral-weak">

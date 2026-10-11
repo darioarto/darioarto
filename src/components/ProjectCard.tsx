@@ -12,6 +12,7 @@ import {
   Text,
 } from "@once-ui-system/core";
 import styles from "./ProjectCard.module.scss";
+import { ProjectLogo } from "./ProjectLogo";
 
 interface ProjectCardProps {
   href: string;
@@ -26,6 +27,8 @@ interface ProjectCardProps {
   period?: string;
   status?: string;
   stack?: string[];
+  logo?: string;
+  logoTile?: boolean;
 }
 
 const statusColor = (status: string) =>
@@ -43,6 +46,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   period,
   status,
   stack = [],
+  logo,
+  logoTile,
 }) => {
   const meta = [period, role].filter(Boolean).join(" · ");
 
@@ -82,9 +87,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             )}
           </Row>
         )}
-        <Heading as="h2" wrap="balance" variant="heading-strong-xl">
-          {title}
-        </Heading>
+        <Row gap="16" vertical="center">
+          {logo && <ProjectLogo src={logo} alt={`${title} logo`} tile={logoTile} />}
+          <Heading as="h2" wrap="balance" variant="heading-strong-xl">
+            {title}
+          </Heading>
+        </Row>
         {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
         {description?.trim() && (
           <Text wrap="balance" variant="body-default-m" onBackground="neutral-weak">
