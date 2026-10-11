@@ -1,4 +1,4 @@
-import { Column, Meta, Schema } from "@once-ui-system/core";
+import { Column, RevealFx, Meta, Schema } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
 import { Projects } from "@/components/work/Projects";
 import { SectionHeader } from "@/components";
@@ -35,8 +35,11 @@ export default function Work() {
         title="Projects"
         description="Infrastructure, communities and products I have built or run."
         marginBottom="40"
+        animate
       />
-      <Projects columns="2" />
+      <RevealFx translateY="16" delay={0.4} fillWidth>
+        <Projects columns="2" />
+      </RevealFx>
     </Column>
   );
 }

@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { CustomMDX, ScrollToHash } from "@/components";
-import { Meta, Schema, AvatarGroup, Button, Column, Heading, HeadingNav, Icon, Row, Text } from "@once-ui-system/core";
+import { TypedText } from "@/components/TypedText";
+import { Meta, Schema, AvatarGroup, Button, Column, Heading, HeadingNav, Icon, RevealFx, Row, Text } from "@once-ui-system/core";
 import { baseURL, about, blog, person } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
 import { getPosts } from "@/utils/utils";
@@ -78,16 +79,25 @@ export default async function Blog({
           <Button data-border="rounded" href="/blog" weight="default" variant="tertiary" size="s" prefixIcon="chevronLeft">
             Back
           </Button>
-          <Heading variant="display-strong-s">{post.metadata.title}</Heading>
+          <Text family="code" variant="label-default-s" onBackground="brand-weak">
+            <TypedText text={`$ cat ~/blog/${post.slug}.mdx`} />
+          </Text>
+          <RevealFx translateY="4" fillWidth horizontal="start">
+            <Heading variant="display-strong-s">{post.metadata.title}</Heading>
+          </RevealFx>
+          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="start">
           <Row gap="12" vertical="center">
             {avatars.length > 0 && <AvatarGroup size="s" avatars={avatars} />}
             <Text family="code" variant="label-default-s" onBackground="neutral-weak">
               {post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
             </Text>
           </Row>
-          <Column as="article" fillWidth>
-            <CustomMDX source={post.content} />
-          </Column>
+          </RevealFx>
+          <RevealFx translateY="16" delay={0.4} fillWidth>
+            <Column as="article" fillWidth>
+              <CustomMDX source={post.content} />
+            </Column>
+          </RevealFx>
           <ScrollToHash />
         </Column>
     </Row>
@@ -102,7 +112,9 @@ export default async function Blog({
         <Icon name="document" size="xs" />
         On this page
       </Row>
-      <HeadingNav fitHeight header={false} />
+      <RevealFx delay={0.6} fillWidth>
+        <HeadingNav fitHeight header={false} />
+      </RevealFx>
     </Column>
     </Row>
   );

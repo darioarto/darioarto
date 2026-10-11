@@ -1,4 +1,4 @@
-import { Column, Meta, Schema } from "@once-ui-system/core";
+import { Column, RevealFx, Meta, Schema } from "@once-ui-system/core";
 import { Posts } from "@/components/blog/Posts";
 import { SectionHeader } from "@/components";
 import { baseURL, blog, person } from "@/resources";
@@ -35,8 +35,11 @@ export default function Blog() {
         title={blog.title}
         description="Guides and notes on Minecraft servers, infrastructure and the tools I use."
         marginBottom="40"
+        animate
       />
-      <Posts columns="2" />
+      <RevealFx translateY="16" delay={0.4} fillWidth>
+        <Posts columns="2" />
+      </RevealFx>
     </Column>
   );
 }

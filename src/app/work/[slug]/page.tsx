@@ -1,9 +1,10 @@
 import { notFound } from "next/navigation";
 import { getPosts } from "@/utils/utils";
-import { Meta, Schema, AvatarGroup, Button, Column, Flex, Heading, Media, Row, Text } from "@once-ui-system/core";
+import { Meta, Schema, AvatarGroup, Button, Column, Flex, Heading, Media, RevealFx, Row, Text } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
 import { ScrollToHash, CustomMDX } from "@/components";
+import { TypedText } from "@/components/TypedText";
 import { ProjectLogo } from "@/components/ProjectLogo";
 import { Metadata } from "next";
 
@@ -77,6 +78,10 @@ export default async function Project({
         <Button data-border="rounded" href="/work" variant="tertiary" weight="default" size="s" prefixIcon="chevronLeft">
           Projects
         </Button>
+        <Text family="code" variant="label-default-s" onBackground="brand-weak">
+          <TypedText text={`$ cat ~/projects/${post.slug}.md`} />
+        </Text>
+        <RevealFx translateY="4" direction="column" gap="16" fillWidth>
         {post.metadata.period && (
           <Text family="code" variant="label-default-s" onBackground="neutral-weak">
             {post.metadata.period}
@@ -101,7 +106,9 @@ export default async function Project({
             )}
           </Column>
         </Row>
+        </RevealFx>
       </Column>
+      <RevealFx translateY="16" delay={0.4} direction="column" gap="l" fillWidth horizontal="center">
       {post.metadata.images.length > 0 && (
         <Media
           priority
@@ -120,6 +127,7 @@ export default async function Project({
         </Flex>
         <CustomMDX source={post.content} />
       </Column>
+      </RevealFx>
       <ScrollToHash />
     </Column>
   );

@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { Text } from "@once-ui-system/core";
+import { useTyping } from "./TypedText";
 
 interface PromptProps {
   command: string;
@@ -14,22 +14,7 @@ interface PromptProps {
 
 // Shell-style line that types out `command` and leaves a blinking caret.
 export function Prompt({ command, path = "~/dario", delay = 400, speed = 80 }: PromptProps) {
-  const [typed, setTyped] = useState(0);
-
-  useEffect(() => {
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    let count = 0;
-    let timer: number;
-
-    const tick = () => {
-      count = reduceMotion ? command.length : count + 1;
-      setTyped(count);
-      if (count < command.length) timer = window.setTimeout(tick, speed);
-    };
-
-    timer = window.setTimeout(tick, reduceMotion ? 0 : delay);
-    return () => window.clearTimeout(timer);
-  }, [command, delay, speed]);
+  const typed = useTyping(command, delay, speed);
 
   return (
     <Text

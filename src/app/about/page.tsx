@@ -7,6 +7,7 @@ import {
   Heading,
   Icon,
   IconButton,
+  RevealFx,
   Row,
   Tag,
   Text,
@@ -16,6 +17,7 @@ import {
 import { baseURL, about, person, social } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
 import { SectionHeader } from "@/components";
+import { TypedText } from "@/components/TypedText";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
 
@@ -91,6 +93,7 @@ export default function About() {
             flex={3}
             horizontal="center"
           >
+            <RevealFx delay={0.2} direction="column" horizontal="center" gap="m">
             <Avatar src={person.avatar} size="xl" border="transparent" />
             <Flex gap="8" vertical="center">
               <Icon onBackground="accent-weak" name="globe" />
@@ -105,6 +108,7 @@ export default function About() {
                 ))}
               </Flex>
             )}
+            </RevealFx>
           </Column>
         )}
         <Column className={styles.blockAlign} flex={9} maxWidth={40}>
@@ -141,19 +145,24 @@ export default function About() {
               </Flex>
             )}
             <Text className={styles.textAlign} family="code" variant="label-default-s" onBackground="brand-weak" marginBottom="8">
-              $ cat ~/about.md
+              <TypedText text="$ cat ~/about.md" />
             </Text>
-            <Heading className={styles.textAlign} variant="display-strong-xl">
-              {person.name}
-            </Heading>
-            <Text
-              className={styles.textAlign}
-              variant="display-default-xs"
-              onBackground="neutral-weak"
-            >
-              {person.role}
-            </Text>
+            <RevealFx translateY="4" fillWidth horizontal="start" s={{ horizontal: "center" }}>
+              <Heading className={styles.textAlign} variant="display-strong-xl">
+                {person.name}
+              </Heading>
+            </RevealFx>
+            <RevealFx translateY="8" delay={0.2} fillWidth horizontal="start" s={{ horizontal: "center" }}>
+              <Text
+                className={styles.textAlign}
+                variant="display-default-xs"
+                onBackground="neutral-weak"
+              >
+                {person.role}
+              </Text>
+            </RevealFx>
             {social.length > 0 && (
+              <RevealFx delay={0.3} fillWidth horizontal="start" s={{ horizontal: "center" }}>
               <Flex className={styles.blockAlign} paddingTop="20" paddingBottom="8" gap="8" wrap horizontal="center" fitWidth data-border="rounded">
                 {social.map(
                   (item) =>
@@ -182,15 +191,19 @@ export default function About() {
                     ),
                 )}
               </Flex>
+              </RevealFx>
             )}
           </Column>
 
           {about.intro.display && (
-            <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl">
-              {about.intro.description}
-            </Column>
+            <RevealFx translateY="8" delay={0.4} fillWidth>
+              <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl">
+                {about.intro.description}
+              </Column>
+            </RevealFx>
           )}
 
+          <RevealFx translateY="16" delay={0.6} direction="column" fillWidth>
           {about.work.display && (
             <Column fillWidth marginBottom="40">
               <SectionHeader id={about.work.title} eyebrow="$ cat ~/experience.log" title={about.work.title} />
@@ -288,6 +301,7 @@ export default function About() {
               </Grid>
             </Column>
           )}
+          </RevealFx>
         </Column>
       </Flex>
     </Column>
