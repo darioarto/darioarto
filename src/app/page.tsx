@@ -8,9 +8,10 @@ import {
   Avatar,
   RevealFx,
   Column,
+  Row,
   Schema,
 } from "@once-ui-system/core";
-import { home, about, person, baseURL, routes } from "@/resources";
+import { home, about, person, baseURL, routes, work, blog } from "@/resources";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
 import { Prompt, SectionHeader } from "@/components";
@@ -47,27 +48,50 @@ export default function Home() {
             </Text>
           </RevealFx>
           <RevealFx paddingTop="12" delay={0.4} horizontal="start">
-            <Button
-              id="about"
-              data-border="rounded"
-              href={about.path}
-              variant="secondary"
-              size="m"
-              weight="default"
-              arrowIcon
-            >
-              <Flex gap="8" vertical="center" paddingRight="4">
-                {about.avatar.display && (
-                  <Avatar
-                    marginRight="8"
-                    style={{ marginLeft: "-0.75rem" }}
-                    src={person.avatar}
-                    size="m"
-                  />
-                )}
-                {about.title}
-              </Flex>
-            </Button>
+            <Row gap="12" wrap data-border="rounded">
+              <Button
+                id="about"
+                href={about.path}
+                variant="secondary"
+                size="m"
+                weight="default"
+                arrowIcon
+              >
+                <Flex gap="8" vertical="center" paddingRight="4">
+                  {about.avatar.display && (
+                    <Avatar
+                      marginRight="8"
+                      style={{ marginLeft: "-0.75rem" }}
+                      src={person.avatar}
+                      size="m"
+                    />
+                  )}
+                  {about.title}
+                </Flex>
+              </Button>
+              {routes["/work"] && (
+                <Button
+                  href={work.path}
+                  prefixIcon="grid"
+                  label={work.label}
+                  variant="secondary"
+                  size="m"
+                  weight="default"
+                  arrowIcon
+                />
+              )}
+              {routes["/blog"] && (
+                <Button
+                  href={blog.path}
+                  prefixIcon="book"
+                  label={blog.label}
+                  variant="secondary"
+                  size="m"
+                  weight="default"
+                  arrowIcon
+                />
+              )}
+            </Row>
           </RevealFx>
         </Column>
       </Column>
