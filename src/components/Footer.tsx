@@ -1,4 +1,4 @@
-import { Flex, IconButton, SmartLink, Text } from "@once-ui-system/core";
+import { Flex, IconButton, Text } from "@once-ui-system/core";
 import { person, social } from "@/resources";
 import styles from "./Footer.module.scss";
 
@@ -25,15 +25,6 @@ export const Footer = () => {
         <Text family="code" variant="label-default-s" onBackground="neutral-strong">
           <Text onBackground="neutral-weak">© {currentYear} /</Text>
           <Text paddingX="4">{person.name}</Text>
-          <Text onBackground="neutral-weak">
-            {/* Usage of this template requires attribution. Please don't remove the link to Once UI. */}
-            / Built by{" "}
-            <SmartLink
-              href="https://warkcorp.com"
-            >
-              Wark Corp.
-            </SmartLink>
-          </Text>
         </Text>
         <Flex gap="16">
           {social.map(
