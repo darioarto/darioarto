@@ -45,11 +45,6 @@ const home = {
   title: `${person.name} – Portfolio`,
   description: `Portfolio of ${person.name}, systems administrator and developer.`,
   headline: <>Building infrastructure and communities since 2020.</>,
-  featured: {
-    display: true,
-    title: "Currently COO & SysAdmin at XeroHost",
-    href: "/work/xerohost",
-  },
   subline: (
     <>
       I’m Darío, a systems administrator and developer.

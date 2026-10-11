@@ -8,10 +8,7 @@ import {
   Avatar,
   RevealFx,
   Column,
-  Row,
   Schema,
-  SmartLink,
-  StatusIndicator,
 } from "@once-ui-system/core";
 import { home, about, person, baseURL, routes } from "@/resources";
 import { Projects } from "@/components/work/Projects";
@@ -50,39 +47,27 @@ export default function Home() {
             </Text>
           </RevealFx>
           <RevealFx paddingTop="12" delay={0.4} horizontal="start">
-            <Row gap="24" vertical="center" wrap>
-              <Button
-                id="about"
-                data-border="rounded"
-                href={about.path}
-                variant="secondary"
-                size="m"
-                weight="default"
-                arrowIcon
-              >
-                <Flex gap="8" vertical="center" paddingRight="4">
-                  {about.avatar.display && (
-                    <Avatar
-                      marginRight="8"
-                      style={{ marginLeft: "-0.75rem" }}
-                      src={person.avatar}
-                      size="m"
-                    />
-                  )}
-                  {about.title}
-                </Flex>
-              </Button>
-              {home.featured.display && (
-                <SmartLink href={home.featured.href} unstyled>
-                  <Row gap="8" vertical="center">
-                    <StatusIndicator size="s" color="green" ariaLabel="Active" />
-                    <Text family="code" variant="label-default-s" onBackground="neutral-medium">
-                      {home.featured.title}
-                    </Text>
-                  </Row>
-                </SmartLink>
-              )}
-            </Row>
+            <Button
+              id="about"
+              data-border="rounded"
+              href={about.path}
+              variant="secondary"
+              size="m"
+              weight="default"
+              arrowIcon
+            >
+              <Flex gap="8" vertical="center" paddingRight="4">
+                {about.avatar.display && (
+                  <Avatar
+                    marginRight="8"
+                    style={{ marginLeft: "-0.75rem" }}
+                    src={person.avatar}
+                    size="m"
+                  />
+                )}
+                {about.title}
+              </Flex>
+            </Button>
           </RevealFx>
         </Column>
       </Column>
