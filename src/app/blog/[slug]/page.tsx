@@ -73,7 +73,7 @@ export default async function Blog({
             }}
           />
           <Button data-border="rounded" href="/blog" weight="default" variant="tertiary" size="s" prefixIcon="chevronLeft">
-            Atrás
+            Back
           </Button>
           <Heading variant="display-strong-s">{post.metadata.title}</Heading>
           <Row gap="12" vertical="center">
@@ -97,9 +97,9 @@ export default async function Blog({
         textVariant="label-default-s"
       >
         <Icon name="document" size="xs" />
-        En este artículo
+        On this page
       </Row>
-      <HeadingNav fitHeight/>
+      <HeadingNav fitHeight header={false} />
     </Column>
     </Row>
   );

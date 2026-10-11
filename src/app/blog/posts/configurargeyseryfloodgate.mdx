@@ -1,39 +1,39 @@
 ---
-title: "4. Configuración de GeyserMC y Floodgate"
-summary: "Te enseño a configurar Geyser en tu servidor de Minecraft."
+title: "4. Setting up GeyserMC and Floodgate"
+summary: "A step-by-step guide to setting up Geyser on your Minecraft server."
 publishedAt: "2025-07-28"
 tag: "Minecraft"
 ---
 
-# Definiciones y usos
-Te explico las definiciones de cada unos de los plugins, y los usos que se le dan a cada uno.
+# Definitions and uses
+First, a quick overview of what each plugin is and what it is used for.
 
-## ¿Qué es GeyserMC?
-GeyserMC es un Proxy que permite a jugadores de Minecraft Bedrock (como los de móvil, consolas o Windows) conectarse a servidores que están basados en la versión Java. No es un servidor como tal, sino una especie de traductor entre las dos ediciones del juego Java y Bedrock. Su función principal es hacer que los paquetes de datos que envía un jugador Bedrock sean compatibles con el servidor Java, permitiendo que ambos puedan jugar juntos, aunque estén en plataformas diferentes. Es ideal para Networks o servidores públicos que quieren abrirse a una comunidad mucho más amplia sin necesidad de montar un servidor Bedrock por separado o un Proxy de Bedrock por separado.
+## What is GeyserMC?
+GeyserMC is a proxy that allows Minecraft Bedrock players (on mobile, consoles or Windows) to join servers based on the Java Edition. It is not a server in itself, but rather a translator between the Java and Bedrock editions of the game. Its main job is to make the data packets sent by a Bedrock player compatible with the Java server, so both can play together even though they are on different platforms. It is ideal for networks or public servers that want to reach a much wider community without running a separate Bedrock server or Bedrock proxy.
 
-## ¿Qué es Floodgate?
-Floodgate es un complemento para GeyserMC que permite que los jugadores de Minecraft Bedrock se conecten a tu servidor Java sin necesidad de tener una cuenta de Minecraft Java Edition. Básicamente, elimina la obligación de iniciar sesión con una cuenta Java y deja que los jugadores entren solo con su cuenta de Microsoft (la que usan normalmente en consola, móvil o Windows). Además, Floodgate gestiona automáticamente las diferencias de nombres de usuario y skins, e incluso añade una pequeña etiqueta (como un ”.” o un “*” antes del nombre del jugador) para identificar a los jugadores Bedrock dentro del servidor. Es fundamental si quieres que tu servidor sea realmente accesible desde cualquier plataforma.
+## What is Floodgate?
+Floodgate is an add-on for GeyserMC that lets Minecraft Bedrock players join your Java server without owning a Minecraft Java Edition account. In short, it removes the need to sign in with a Java account and allows players to join with just their Microsoft account (the one they normally use on console, mobile or Windows). Floodgate also automatically handles differences in usernames and skins, and can add a small prefix (such as a "." or "*" before the player's name) to identify Bedrock players on the server. It is essential if you want your server to be truly accessible from any platform.
 
-# Configuración de GeyserMC y Floodgate
-Te enseño paso a paso a configurar GeyserMC y Floodgate para un servidor Paper.
+# Setting up GeyserMC and Floodgate
+A step-by-step guide to setting up GeyserMC and Floodgate on a Paper-based network.
 
-## Paso 1: Descargar los archivos necesarios
-Para comenzar con el proceso de instalación de ambos plugins para Paper necesitas decargarlos desde su sitio oficial.
-- Link a **Geyser**: [geysermc.org/download/](https://geysermc.org/download/)
-- Link a **Floodgate**: [geysermc.org/download/?project=floodgate](https://geysermc.org/download/?project=floodgate)
+## Step 1: Download the required files
+To start installing both plugins, download them from their official website.
+- **Geyser**: [geysermc.org/download/](https://geysermc.org/download/)
+- **Floodgate**: [geysermc.org/download/?project=floodgate](https://geysermc.org/download/?project=floodgate)
 
-## Paso 2: Accede al panel de tu hosting
-Yo uso [XeroHost](https://xerohost.net) como alojamiento para mi Network, así que mostraré los pasos en su panel web.
-- 1. Nos dirijiremos a nuestro servidor **Proxy** (el que interconecta todos los servidores de tu Network), te recomendamos que tengas instalado **Velocity** ([aquí tienes el porqué lo recomendamos](https://dario.warkcorp.com/blog/bungeecordovelocity)) para instalar GeyserMC.
-- 2. Ahora nos aseguramos de tener el Proxy apagado para poder instalar los archivos que descargamos con seguridad.
-- 3. Dirígete a la sección de **archivos** (o "Files" en mi caso) de tu servidor.
-- 4. Mete los archivos que descargaste antes en la carpeta de `plugins` de tu Proxy. Normalmente se ubica en `/home/container/plugins` o similar. Los archivos suelen llamarse `Geyser-Velocity.jar` y `floodgate-velocity.jar` respectivamente.
-- 5. Inicia el servidor Proxy para que se generen las carpetas dónde podrás configurar los plugins correctamente.
+## Step 2: Open your hosting panel
+I use [XeroHost](https://xerohost.net) to host my network, so the steps below are shown using its web panel.
+- 1. Go to your **proxy** server (the one that connects all the servers in your network). We recommend running **Velocity** ([here is why we recommend it](/blog/bungeecordovelocity)) to install GeyserMC.
+- 2. Make sure the proxy is stopped so you can safely install the files you downloaded.
+- 3. Go to your server's **Files** section.
+- 4. Upload the files you downloaded earlier to your proxy's `plugins` folder, usually located at `/home/container/plugins` or similar. The files are typically named `Geyser-Velocity.jar` and `floodgate-velocity.jar` respectively.
+- 5. Start the proxy so that the folders where you will configure the plugins are generated.
 
-## Paso 3: Configurar Geyser y Floodgate
-Una vez que hayas inicado tu servidor, te deberían de aparecer **2** carpetas nuevas en tu carpeta de `plugins`: **floodgate** y **Geyser-Velocity**. Allí es donde estarán los archivos de configuración de los plugins.
-- 1. Para configurar Geyser debes de abrir un puerto extra en tu servidor, normalmente en los hosts desde la pestaña **Network**, en mi caso se abrió el puerto `25581` y es el que usaremos para que entren los jugadores de Bedrock (aunque es recomendable que abras el puerto 19132 si puedes, que es el puerto por defecto de Bedrock).
-- 2. Ahora dirígete al archivo **config.yml** de Geyser, normalmente ubicado aquí: `/home/container/plugins/Geyser-Velocity/config.yml` y edita lo siguiente:
+## Step 3: Configure Geyser and Floodgate
+Once your server has started, **2** new folders should appear in your `plugins` folder: **floodgate** and **Geyser-Velocity**. These contain the plugins' configuration files.
+- 1. To configure Geyser, you need to open an additional port on your server, usually from the **Network** tab of your hosting panel. In my case, port `25581` was opened, and that is the port Bedrock players will use to connect (if possible, it is recommended to open port 19132, which is Bedrock's default port).
+- 2. Now open Geyser's **config.yml** file, usually located at `/home/container/plugins/Geyser-Velocity/config.yml`, and edit the following:
 
 <CodeBlock
     marginBottom="16"
@@ -53,9 +53,9 @@ Una vez que hayas inicado tu servidor, te deberían de aparecer **2** carpetas n
     ]}
 />
 
-Solo edita la sección de `port: 19132` y **coloca tu puerto libre** (atención, no pongas el puerto principal de tu servidor, ese ya está en uso y puede generar errores, pon un puerto abierto que esté libre y no esté siendo usado por otro plugin o programa).
+Only change the default `port: 19132` value to **your free port**. Be careful not to use your server's main port: it is already in use and can cause errors. Use an open port that is free and not used by any other plugin or program.
 
-- 3. Ahora asegúrate de tener esto en **config.yml** de Geyser también:
+- 3. Next, make sure Geyser's **config.yml** also contains the following:
 
 <CodeBlock
     marginBottom="16"
@@ -75,17 +75,17 @@ Solo edita la sección de `port: 19132` y **coloca tu puerto libre** (atención,
     ]}
 />
 
-Tendrías que tener en `auth-type:` **floodgate**, para que funcione correctamente. El resto del archivo te recomiendo no modificarlo si no sabes lo que estás haciendo, porque puedes hacer que no funcione y los jugadores de Bedrock no puedan entrar.
+`auth-type:` must be set to **floodgate** for everything to work correctly. I recommend leaving the rest of the file untouched unless you know what you are doing, as you could break the setup and prevent Bedrock players from joining.
 
-- 4. Guarda los cambios y reinica el servidor.
-- 5. Ahora instala **Geyser** y **Floodgate** en tus otros servidores (por ejemplo; Lobby, Survival, Minijuegos, BoxPvP, etc) siguiendo los mismo pasos que hasta ahora, dónde quieras que se conecten los jugadores de Bedrock instala los plugins.
-- 6. Viene un paso importante para que funcione todo lo que hicimos hasta ahora, ve al Proxy y descarga el archivo `key.pem`, ubicado normalmente en `/home/container/plugins/floodgate`. Y en los otros servidores elimina ese archivo de la misma carpeta y sustitúyelo por el que descargaste del Proxy. El archivo `key.pem` es la llave que hace posible que los jugadores de Bedrock puedan conectarse al Lobby u otras modalidades que tengas. Sin eso bien configurado, los jugadores de Bedrock solo podrán conectarse al Proxy y les saldrá un error de conexión.
+- 4. Save the changes and restart the server.
+- 5. Now install **Geyser** and **Floodgate** on your other servers (for example Lobby, Survival, Minigames, BoxPvP, etc.) following the same steps. Install the plugins on every server Bedrock players should be able to join.
+- 6. Next comes an important step for everything to work: go to the proxy and download the `key.pem` file, usually located in `/home/container/plugins/floodgate`. On your other servers, delete that file from the same folder and replace it with the one you downloaded from the proxy. The `key.pem` file is the key that allows Bedrock players to connect to the Lobby and any other game modes you run. Without it configured correctly, Bedrock players will only be able to reach the proxy and will get a connection error.
 
-Sobra decir que cuando hagas cambios tanto en el Proxy como en otro servidores, reincies el servidor para aplicar los cambios y que se vean reflejados en el servidor.
+Needless to say, whenever you make changes on the proxy or on any other server, restart it so the changes take effect.
 
-## Paso 4: Cambiar el prefijo de los jugadores de Bedrock (Opcional)
-Puedes cambiar el prefijo que aparecerá delante del nombre del jugador para diferenciarlo del resto de jugadores de Java.
-Esto se hace desde el **archivo de configuración de Floodgate**: `/home/container/plugins/floodgate/config.yml`:
+## Step 4: Change the Bedrock player prefix (optional)
+You can change the prefix shown before a player's name to distinguish Bedrock players from Java players.
+This is done in **Floodgate's configuration file**: `/home/container/plugins/floodgate/config.yml`:
 
 <CodeBlock
     marginBottom="16"
@@ -99,5 +99,5 @@ Esto se hace desde el **archivo de configuración de Floodgate**: `/home/contain
     ]}
 />
 
-Yo te recomiendo poner `"B_"` porque es compatible con el sistema de grupos y permisos **LuckPerms**.
-Pero puedes poner lo que quieras que no sea muy largo y que impida ver el nombre del jugador.
+I recommend using `"B_"` because it is compatible with the **LuckPerms** groups and permissions system.
+You can use anything you like, as long as it is short and does not obscure the player's name.

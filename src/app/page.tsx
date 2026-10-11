@@ -1,8 +1,7 @@
 import React from "react";
 
 import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Badge, Row, Meta, Schema } from "@once-ui-system/core";
-import { home, about, person, newsletter, baseURL, routes } from "@/resources";
-import { Mailchimp } from "@/components";
+import { home, about, person, baseURL, routes } from "@/resources";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
 
@@ -74,7 +73,7 @@ export default function Home() {
         <Flex fillWidth gap="24" s={{ direction: "column" }}>
           <Flex flex={1} paddingLeft="l" paddingTop="24">
             <Heading as="h2" variant="display-strong-xs" wrap="balance">
-              Lo último en Artículos
+              Latest from the blog
             </Heading>
           </Flex>
           <Flex flex={3} paddingX="20">
@@ -82,7 +81,6 @@ export default function Home() {
           </Flex>
         </Flex>
       )}
-      {newsletter.display && <Mailchimp newsletter={newsletter} />}
     </Column>
   );
 }

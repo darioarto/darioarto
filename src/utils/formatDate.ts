@@ -11,16 +11,16 @@ export function formatDate(date: string, includeRelative = false) {
   let formattedDate = "";
 
   if (daysAgo >= 365) {
-    formattedDate = `hace ${Math.floor(daysAgo / 365)}a`;
+    formattedDate = `${Math.floor(daysAgo / 365)}y ago`;
   } else if (daysAgo >= 30) {
-    formattedDate = `hace ${Math.floor(daysAgo / 30)}m`;
+    formattedDate = `${Math.floor(daysAgo / 30)}mo ago`;
   } else if (daysAgo > 0) {
-    formattedDate = `hace ${daysAgo}d`;
+    formattedDate = `${daysAgo}d ago`;
   } else {
-    formattedDate = "Hoy";
+    formattedDate = "Today";
   }
 
-  const fullDate = targetDate.toLocaleString("es-ES", {
+  const fullDate = targetDate.toLocaleString("en-GB", {
     month: "long",
     day: "numeric",
     year: "numeric",

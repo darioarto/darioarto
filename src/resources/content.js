@@ -6,22 +6,11 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Staff & Desarrollador",
+  role: "SysAdmin & Developer",
   avatar: "/images/avatar.jpg",
-  email: "dario@warkcorp.com",
+  email: "dario@xerohost.net",
   location: "Europe/Madrid", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["España"], // optional: Leave the array empty if you don't want to display languages
-};
-
-const newsletter = {
-  display: true,
-  title: <>¡Suscríbete a mi Newsletter!</>,
-  description: (
-    <>
-      A veces escribo acerca de mis proyectos, tecnología y comparto cosas relacionadas con
-      ingeniería o noticias.
-    </>
-  ),
+  languages: ["Spain"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const social = [
@@ -30,17 +19,17 @@ const social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/Wark-Corp",
+    link: "https://github.com/darioarto",
   },
   {
-    name: "LinkedIn",
-    icon: "linkedin",
-    link: "https://www.linkedin.com/company/warkcorp/",
+    name: "Instagram",
+    icon: "instagram",
+    link: "https://www.instagram.com/darioarto_/",
   },
   {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@dario57923_",
+    name: "X",
+    icon: "x",
+    link: "https://x.com/darioarto",
   },
   {
     name: "Email",
@@ -52,28 +41,29 @@ const social = [
 const home = {
   path: "/",
   image: "/images/og/home.jpg",
-  label: "Inicio",
-  title: `Portfolio de ${person.name}`,
-  description: `Portfolio personal de Darío.`,
-  headline: <>Desarrollando y moderando desde 2020.</>,
+  label: "Home",
+  title: `${person.name} – Portfolio`,
+  description: `Portfolio of ${person.name}, systems administrator and developer.`,
+  headline: <>Building infrastructure and communities since 2020.</>,
   featured: {
     display: true,
-    title: <>Proyecto más reciente: <strong className="ml-4">Wark Corp.</strong></>,
-    href: "/work/wark",
+    title: <>Current focus: <strong className="ml-4">XeroHost</strong></>,
+    href: "/work/xerohost",
   },
   subline: (
     <>
-      Soy Darío, configurador, desarrollador y Staff avanzado, dónde he aprendido muchas cosas acerca de mejorar
-      <br /> la experiencia del usuario. Después de mucho tiempo, fundé mi empresa con el fin de aprender todo lo posible.
+      I’m Darío, a systems administrator and developer.
+      <br /> I run VPS and game server infrastructure as COO of XeroHost, and founded Wark Corp. to
+      build tools for online communities.
     </>
   ),
 };
 
 const about = {
   path: "/about",
-  label: "Sobre mí",
-  title: `Sobre mí – ${person.name}`,
-  description: `Información acerca de ${person.name} y sus habilidades.`,
+  label: "About",
+  title: `About – ${person.name}`,
+  description: `About ${person.name}: experience, education and skills.`,
   tableOfContent: {
     display: false,
     subItems: false,
@@ -87,82 +77,150 @@ const about = {
   },
   intro: {
     display: true,
-    title: "Introducción",
+    title: "Introduction",
     description: (
       <>
-        Soy Darío, me dedico a la informática y a la gestión activa o pasiva de comunidades en
-        entornos como Discord, Minecraft, Slack o Telegram. Aparte de la programación y de la
-        moderación, me gusta contribuir a la música que me gusta mediante Musixmatch.
+        I’m Darío, a systems administrator and developer based in Spain. My work spans systems,
+        networking and hosting infrastructure, from VPS to game servers, alongside software
+        development and the management of online communities on platforms such as Discord,
+        Minecraft and Slack. Outside of work, I’m a Curator at Musixmatch, contributing to the
+        lyrics of the music I enjoy.
       </>
     ),
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Experiencias",
+    title: "Experience",
     experiences: [
       {
-        company: "Wark Corporation",
-        timeframe: "2023 - Presente",
-        role: "Fundador & CEO",
+        company: "XeroHost",
+        timeframe: "2025 - Present",
+        role: "COO & SysAdmin",
         achievements: [
           <>
-            Creé la compañía pensando en lo mejor para los usuarios de Discord, buscando mejorar
-            la experiencia de los miembros de los servidores que usen nuestras aplicaciones.
+            VPS and game server hosting provider, part of XeroGroup LLC (AS216102), with
+            infrastructure in Miami, Dallas and São Paulo.
+          </>,
+          <>Administration of VPS infrastructure, alongside customer and billing management.</>,
+          <>
+            Troubleshooting of support incidents (FiveM, Minecraft Java and Bedrock) and
+            development of a knowledge base for the support team.
+          </>,
+          <>Marketing and communications, including email, Discord and Trustpilot campaigns.</>,
+        ],
+        images: [],
+      },
+      {
+        company: "Wark Corp.",
+        timeframe: "2023 - Present",
+        role: "Founder & CEO",
+        achievements: [
+          <>
+            Founded the company to improve the experience of Discord communities, building
+            applications focused on moderation and security for their members.
           </>,
           <>
-            Desde 2023 hemos conseguido la increíble cifra de +160 servidores entre ambas aplicaciones,
-            lo que es más del triple que la mayoría de apliaciones de moderación y seguridad.
+            Since 2023, our applications have reached more than 160 servers combined, over three
+            times the reach of most moderation and security applications.
+          </>,
+          <>
+            Management of the company’s own infrastructure, including databases and the migration
+            of PostgreSQL to self-hosted infrastructure.
+          </>,
+          <>
+            Brand and public presence, and development of Vynk, a social network currently in
+            development under Wark Corp.
           </>,
         ],
         images: [],
       },
       {
-        company: "Motion Network",
-        timeframe: "2023 - Presente",
-        role: "Fundador & Configurador principal",
+        company: "CosmixMC Network",
+        timeframe: "2023 - Present",
+        role: "Founder, Owner & Lead Developer",
         achievements: [
           <>
-            Configuré el servidor entero solo con mis conocimientos y con mis propias herramientas.
-            Tengo conocimientos en el sistema de archivos YML, databases como MySQL o MariaDB para
-            gestión de permisos o usuarios. Y mucho más.
+            Configured the entire server using my own knowledge and tooling, including YAML
+            configuration files and MySQL/MariaDB databases for permission and user management.
           </>,
           <>
-            Lideré al Equipo de Desarrollo para coordinar el buen funcionamiento del mismo.
-            Aparte, durante un tiempo me encargué del Equipo de Staff, con guías y documentación personalizada.
+            Led the development team to keep the project running smoothly, and managed the Staff
+            team for a period with custom guides and documentation.
           </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Junta Vecinal de Verdeña",
+        timeframe: "2026 - Present",
+        role: "Website & Social Media Management",
+        achievements: [
+          <>Management of the village’s website and its presence on social media.</>,
         ],
         images: [],
       },
     ],
   },
   studies: {
-    display: false, // set to false to hide this section
-    title: "Studies",
+    display: true, // set to false to hide this section
+    title: "Education",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
-      },
-      {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Microcomputer Systems and Networks (SMR)",
+        description: <>Intermediate Vocational Training Diploma (Grado Medio). In progress.</>,
       },
     ],
   },
   technical: {
     display: true, // set to false to hide this section
-    title: "Skills y habilidades",
+    title: "Skills",
     skills: [
       {
-        title: "Next.js, PHP, HTML y CSS",
-        description: <>Disponibilidad para configurar páginas web con diferentes formatos y lenguajes.</>,
+        title: "Systems Administration & Infrastructure",
+        description: (
+          <>
+            Linux, VirtFusion, WHMCS, Pterodactyl and Velocity, as well as databases such as
+            MySQL, MariaDB and PostgreSQL.
+          </>
+        ),
         // optional: leave the array empty if you don't want to display images
         images: [],
       },
       {
-        title: "Java, Javascript y Python",
-        description: <>También tengo conocimiento de programación en todo tipo de Java. Incluyendo la creación de plugins de Minecraft sencillos.</>,
-        // optional: leave the array empty if you don't want to display images
+        title: "Networking & Security",
+        description: (
+          <>
+            Cloudflare Zero Trust, Kali Linux and basic penetration testing, SSH and secure access
+            best practices.
+          </>
+        ),
+        images: [],
+      },
+      {
+        title: "Next.js, PHP, HTML & CSS",
+        description: <>Building and configuring websites across different frameworks and languages.</>,
+        images: [],
+      },
+      {
+        title: "Java, JavaScript & Python",
+        description: (
+          <>
+            Programming across the Java ecosystem, including the development of Minecraft plugins,
+            as well as JavaScript and Python.
+          </>
+        ),
+        images: [],
+      },
+      {
+        title: "Mobile Development",
+        description: <>Native iOS development with Swift and SwiftUI.</>,
+        images: [],
+      },
+      {
+        title: "Management & Communication",
+        description: (
+          <>Team coordination, customer support, marketing and community management.</>
+        ),
         images: [],
       },
     ],
@@ -171,20 +229,20 @@ const about = {
 
 const blog = {
   path: "/blog",
-  label: "Artículos",
-  title: `Artículos y Novedades`,
-  description: `Lee las publicaciones recientes de ${person.name}`,
+  label: "Blog",
+  title: "Articles & Updates",
+  description: `Read the latest posts by ${person.name}`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
 };
 
 const work = {
   path: "/work",
-  label: "Projectos",
-  title: `Projectos – ${person.name}`,
-  description: `Projectos en los que colaboró ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
+  label: "Projects",
+  title: `Projects – ${person.name}`,
+  description: `Projects by ${person.name}`,
+  // Create new project pages by adding a new .mdx file to app/work/projects
   // All projects will be listed on the /home and /work routes
 };
 
-export { person, social, newsletter, home, about, blog, work };
+export { person, social, home, about, blog, work };

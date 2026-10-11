@@ -126,64 +126,20 @@ const effects = {
   },
 };
 
-const mailchimp = {
-  action: "https://url/subscribe/post?parameters",
-  effects: {
-    mask: {
-      cursor: true,
-      x: 50,
-      y: 0,
-      radius: 100,
-    },
-    gradient: {
-      display: true,
-      opacity: 90,
-      x: 50,
-      y: 0,
-      width: 50,
-      height: 50,
-      tilt: 0,
-      colorStart: "accent-background-strong",
-      colorEnd: "static-transparent",
-    },
-    dots: {
-      display: true,
-      opacity: 20,
-      size: "2",
-      color: "brand-on-background-weak",
-    },
-    grid: {
-      display: false,
-      opacity: 100,
-      color: "neutral-alpha-medium",
-      width: "0.25rem",
-      height: "0.25rem",
-    },
-    lines: {
-      display: false,
-      opacity: 100,
-      color: "neutral-alpha-medium",
-      size: "16",
-      thickness: 1,
-      angle: 90,
-    },
-  }
-};
-
 // default schema data
 const schema = {
   logo: "",
-  type: "Organization",
-  name: "Wark Corp",
+  type: "Person",
+  name: "Darío A.",
   description: home.description,
-  email: "info@warkcorp.com",
+  email: "dario@xerohost.net",
 };
 
 // social links
 const sameAs = {
-  threads: "https://www.threads.com/@dario57923_",
-  linkedin: "https://www.linkedin.com/company/warkcorp/",
-  discord: "https://discord.com/invite/",
+  github: "https://github.com/darioarto",
+  instagram: "https://www.instagram.com/darioarto_/",
+  x: "https://x.com/darioarto",
 };
 
-export { display, mailchimp, routes, protectedRoutes, baseURL, fonts, style, schema, sameAs, effects, dataStyle };
+export { display, routes, protectedRoutes, baseURL, fonts, style, schema, sameAs, effects, dataStyle };
