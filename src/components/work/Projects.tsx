@@ -33,7 +33,6 @@ export function Projects({ range, columns = "1" }: ProjectsProps) {
           link={post.metadata.link || ""}
           role={post.metadata.role}
           period={post.metadata.period}
-          status={post.metadata.status}
           logo={post.metadata.logo}
           logoTile={post.metadata.logoTile}
         />

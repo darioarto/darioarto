@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getPosts } from "@/utils/utils";
-import { Meta, Schema, AvatarGroup, Button, Column, Flex, Heading, Media, Row, StatusIndicator, Text } from "@once-ui-system/core";
+import { Meta, Schema, AvatarGroup, Button, Column, Flex, Heading, Media, Row, Text } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
 import { ScrollToHash, CustomMDX } from "@/components";
@@ -77,24 +77,10 @@ export default async function Project({
         <Button data-border="rounded" href="/work" variant="tertiary" weight="default" size="s" prefixIcon="chevronLeft">
           Projects
         </Button>
-        {(post.metadata.period || post.metadata.status) && (
-          <Row gap="12" vertical="center" wrap>
-            <Text family="code" variant="label-default-s" onBackground="neutral-weak">
-              {post.metadata.period}
-            </Text>
-            {post.metadata.status && (
-              <Row gap="8" vertical="center">
-                <StatusIndicator
-                  size="s"
-                  color={post.metadata.status.toLowerCase() === "active" ? "green" : "yellow"}
-                  ariaLabel={post.metadata.status}
-                />
-                <Text family="code" variant="label-default-s" onBackground="neutral-medium">
-                  {post.metadata.status}
-                </Text>
-              </Row>
-            )}
-          </Row>
+        {post.metadata.period && (
+          <Text family="code" variant="label-default-s" onBackground="neutral-weak">
+            {post.metadata.period}
+          </Text>
         )}
         <Row gap="20" vertical="center">
           {post.metadata.logo && (
@@ -125,7 +111,7 @@ export default async function Project({
           src={post.metadata.images[0]}
         />
       )}
-      <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
+      <Column style={{ margin: "0 auto" }} as="article" maxWidth="xs">
         <Flex gap="12" marginBottom="24" vertical="center">
           {post.metadata.team && <AvatarGroup reverse avatars={avatars} size="m" />}
           <Text family="code" variant="label-default-s" onBackground="neutral-weak">

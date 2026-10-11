@@ -7,7 +7,6 @@ import {
   Heading,
   Row,
   SmartLink,
-  StatusIndicator,
   Text,
 } from "@once-ui-system/core";
 import styles from "./ProjectCard.module.scss";
@@ -24,13 +23,9 @@ interface ProjectCardProps {
   link: string;
   role?: string;
   period?: string;
-  status?: string;
   logo?: string;
   logoTile?: boolean;
 }
-
-const statusColor = (status: string) =>
-  status.toLowerCase() === "active" ? "green" : "yellow";
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
   href,
@@ -42,7 +37,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   link,
   role,
   period,
-  status,
   logo,
   logoTile,
 }) => {
@@ -67,21 +61,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         />
       )}
       <Column fillWidth flex={1} padding="24" gap="16">
-        {(period || status) && (
-          <Row fillWidth horizontal="between" vertical="center" gap="12" wrap>
-            <Text family="code" variant="label-default-s" onBackground="neutral-weak">
-              {period}
-            </Text>
-            {status && (
-              <Row gap="8" vertical="center">
-                <StatusIndicator size="s" color={statusColor(status)} ariaLabel={status} />
-                <Text family="code" variant="label-default-s" onBackground="neutral-medium">
-                  {status}
-                </Text>
-              </Row>
-            )}
-          </Row>
-        )}
+        {/* Always rendered so names line up across cards, even without a period */}
+        <Text family="code" variant="label-default-s" onBackground="neutral-weak">
+          {period || " "}
+        </Text>
         <Row gap="16" vertical="center">
           {logo && <ProjectLogo src={logo} alt={`${title} logo`} tile={logoTile} />}
           <Column gap="2">
