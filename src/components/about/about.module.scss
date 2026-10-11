@@ -27,3 +27,33 @@
         align-self: center;
     }
 }
+/* Experience timeline */
+.rail {
+    flex-shrink: 0;
+    width: var(--static-space-12);
+    padding-top: var(--static-space-8);
+}
+
+.dot {
+    width: var(--static-space-12);
+    height: var(--static-space-12);
+    border-radius: 50%;
+    border: 2px solid var(--brand-on-background-weak);
+    background: var(--page-background);
+}
+
+.line {
+    flex: 1;
+    width: 1px;
+    margin-top: var(--static-space-8);
+    background: var(--neutral-alpha-medium);
+}
+
+.list {
+    padding-left: var(--static-space-20);
+    margin: 0;
+
+    li::marker {
+        color: var(--brand-on-background-weak);
+    }
+}

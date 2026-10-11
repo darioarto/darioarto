@@ -1,21 +1,20 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-import { Row, ToggleButton, useTheme } from '@once-ui-system/core';
+import React, { useSyncExternalStore } from 'react';
+import { ToggleButton, useTheme } from '@once-ui-system/core';
+
+// The resolved theme lives on <html data-theme>, set by the init script and ThemeProvider.
+const subscribe = (onChange: () => void) => {
+  const observer = new MutationObserver(onChange);
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  return () => observer.disconnect();
+};
+const getTheme = () => document.documentElement.getAttribute('data-theme') || 'light';
+const getServerTheme = () => 'light';
 
 export const ThemeToggle: React.FC = () => {
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  const [currentTheme, setCurrentTheme] = useState('light');
-
-  useEffect(() => {
-    setMounted(true);
-    setCurrentTheme(document.documentElement.getAttribute('data-theme') || 'light');
-  }, []);
-
-  useEffect(() => {
-    setCurrentTheme(document.documentElement.getAttribute('data-theme') || 'light');
-  }, [theme]);
+  const { setTheme } = useTheme();
+  const currentTheme = useSyncExternalStore(subscribe, getTheme, getServerTheme);
 
   const icon = currentTheme === 'dark' ? 'light' : 'dark';
   const nextTheme = currentTheme === 'light' ? 'dark' : 'light';

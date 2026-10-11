@@ -1,9 +1,22 @@
 import React from "react";
 
-import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Badge, Row, Meta, Schema } from "@once-ui-system/core";
+import {
+  Heading,
+  Flex,
+  Text,
+  Button,
+  Avatar,
+  RevealFx,
+  Column,
+  Row,
+  Schema,
+  SmartLink,
+  StatusIndicator,
+} from "@once-ui-system/core";
 import { home, about, person, baseURL, routes } from "@/resources";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
+import { Prompt, SectionHeader } from "@/components";
 
 export default function Home() {
   return (
@@ -23,14 +36,9 @@ export default function Home() {
       />
       <Column fillWidth paddingY="24" gap="m">
         <Column maxWidth="s">
-          {home.featured.display && (
-          <RevealFx fillWidth horizontal="start" paddingTop="16" paddingBottom="32" paddingLeft="12">
-            <Badge background="brand-alpha-weak" paddingX="12" paddingY="4" onBackground="neutral-strong" textVariant="label-default-s" arrow={false}
-              href={home.featured.href}>
-              <Row paddingY="2">{home.featured.title}</Row>
-            </Badge>
+          <RevealFx fillWidth horizontal="start" paddingTop="16" paddingBottom="24">
+            <Prompt command="whoami" />
           </RevealFx>
-          )}
           <RevealFx translateY="4" fillWidth horizontal="start" paddingBottom="16">
             <Heading wrap="balance" variant="display-strong-l">
               {home.headline}
@@ -41,45 +49,54 @@ export default function Home() {
               {home.subline}
             </Text>
           </RevealFx>
-          <RevealFx paddingTop="12" delay={0.4} horizontal="start" paddingLeft="12">
-            <Button
-              id="about"
-              data-border="rounded"
-              href={about.path}
-              variant="secondary"
-              size="m"
-              weight="default"
-              arrowIcon
-            >
-              <Flex gap="8" vertical="center" paddingRight="4">
-                {about.avatar.display && (
-                  <Avatar
-                    marginRight="8"
-                    style={{ marginLeft: "-0.75rem" }}
-                    src={person.avatar}
-                    size="m"
-                  />
-                )}
-                {about.title}
-              </Flex>
-            </Button>
+          <RevealFx paddingTop="12" delay={0.4} horizontal="start">
+            <Row gap="24" vertical="center" wrap>
+              <Button
+                id="about"
+                data-border="rounded"
+                href={about.path}
+                variant="secondary"
+                size="m"
+                weight="default"
+                arrowIcon
+              >
+                <Flex gap="8" vertical="center" paddingRight="4">
+                  {about.avatar.display && (
+                    <Avatar
+                      marginRight="8"
+                      style={{ marginLeft: "-0.75rem" }}
+                      src={person.avatar}
+                      size="m"
+                    />
+                  )}
+                  {about.title}
+                </Flex>
+              </Button>
+              {home.featured.display && (
+                <SmartLink href={home.featured.href} unstyled>
+                  <Row gap="8" vertical="center">
+                    <StatusIndicator size="s" color="green" ariaLabel="Active" />
+                    <Text family="code" variant="label-default-s" onBackground="neutral-medium">
+                      {home.featured.title}
+                    </Text>
+                  </Row>
+                </SmartLink>
+              )}
+            </Row>
           </RevealFx>
         </Column>
       </Column>
       <RevealFx translateY="16" delay={0.6}>
-        <Projects range={[1, 1]} />
+        <Column fillWidth>
+          <SectionHeader eyebrow="$ ls ~/projects --featured" title="Featured project" />
+          <Projects range={[1, 1]} />
+        </Column>
       </RevealFx>
       {routes["/blog"] && (
-        <Flex fillWidth gap="24" s={{ direction: "column" }}>
-          <Flex flex={1} paddingLeft="l" paddingTop="24">
-            <Heading as="h2" variant="display-strong-xs" wrap="balance">
-              Latest from the blog
-            </Heading>
-          </Flex>
-          <Flex flex={3} paddingX="20">
-            <Posts range={[1, 2]} columns="2" />
-          </Flex>
-        </Flex>
+        <Column fillWidth>
+          <SectionHeader eyebrow="$ tail ~/blog" title="Latest from the blog" />
+          <Posts range={[1, 2]} columns="2" />
+        </Column>
       )}
     </Column>
   );

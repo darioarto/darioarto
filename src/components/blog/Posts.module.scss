@@ -1,12 +1,7 @@
-.hover {
-    border: 1px solid var(--static-transparent);
+.card {
+    transition: border-color var(--transition-micro-medium);
 
     &:hover {
-        border: 1px solid var(--neutral-alpha-medium);
+        border-color: var(--brand-alpha-medium);
     }
-}
-
-.image {
-    transition: var(--transition-micro-medium);
-    transform: scale(1);
 }

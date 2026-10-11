@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import { Fade, Flex, Line, ToggleButton } from "@once-ui-system/core";
+import { Fade, Flex, Line, Text, ToggleButton } from "@once-ui-system/core";
 
 import { routes, display, person, about, blog, work } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
@@ -42,6 +42,26 @@ const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en-GB" })
 
 export default TimeDisplay;
 
+type NavItemProps = {
+  icon: string;
+  href: string;
+  label: string;
+  selected: boolean;
+};
+
+// Labelled button on desktop, icon-only on mobile. The wrappers carry the responsive
+// visibility so the button's own display styles can't override it.
+const NavItem = ({ icon, href, label, selected }: NavItemProps) => (
+  <>
+    <Flex s={{ hide: true }}>
+      <ToggleButton prefixIcon={icon} href={href} label={label} selected={selected} />
+    </Flex>
+    <Flex s={{ hide: false }}>
+      <ToggleButton prefixIcon={icon} href={href} selected={selected} aria-label={label} />
+    </Flex>
+  </>
+);
+
 export const Header = () => {
   const pathname = usePathname() ?? "";
 
@@ -79,55 +99,13 @@ export const Header = () => {
               )}
               <Line background="neutral-alpha-medium" vert maxHeight="24" />
               {routes["/about"] && (
-                <>
-                  <ToggleButton
-                    className="s-flex-hide"
-                    prefixIcon="person"
-                    href="/about"
-                    label={about.label}
-                    selected={pathname === "/about"}
-                  />
-                  <ToggleButton
-                    className="s-flex-show"
-                    prefixIcon="person"
-                    href="/about"
-                    selected={pathname === "/about"}
-                  />
-                </>
+                <NavItem icon="person" href="/about" label={about.label} selected={pathname === "/about"} />
               )}
               {routes["/work"] && (
-                <>
-                  <ToggleButton
-                    className="s-flex-hide"
-                    prefixIcon="grid"
-                    href="/work"
-                    label={work.label}
-                    selected={pathname.startsWith("/work")}
-                  />
-                  <ToggleButton
-                    className="s-flex-show"
-                    prefixIcon="grid"
-                    href="/work"
-                    selected={pathname.startsWith("/work")}
-                  />
-                </>
+                <NavItem icon="grid" href="/work" label={work.label} selected={pathname.startsWith("/work")} />
               )}
               {routes["/blog"] && (
-                <>
-                  <ToggleButton
-                    className="s-flex-hide"
-                    prefixIcon="book"
-                    href="/blog"
-                    label={blog.label}
-                    selected={pathname.startsWith("/blog")}
-                  />
-                  <ToggleButton
-                    className="s-flex-show"
-                    prefixIcon="book"
-                    href="/blog"
-                    selected={pathname.startsWith("/blog")}
-                  />
-                </>
+                <NavItem icon="book" href="/blog" label={blog.label} selected={pathname.startsWith("/blog")} />
               )}
               {display.themeSwitcher && (
                 <>
@@ -143,10 +121,18 @@ export const Header = () => {
             paddingRight="12"
             horizontal="end"
             vertical="center"
-            textVariant="body-default-s"
             gap="20"
           >
-            <Flex s={{ hide: true }}>{display.time && <TimeDisplay timeZone={person.location} />}</Flex>
+            {display.time && (
+              <Flex s={{ hide: true }} gap="8">
+                <Text family="code" variant="label-default-s" onBackground="neutral-weak">
+                  {person.location.split("/").pop()}
+                </Text>
+                <Text family="code" variant="label-default-s" onBackground="neutral-strong">
+                  <TimeDisplay timeZone={person.location} />
+                </Text>
+              </Flex>
+            )}
           </Flex>
         </Flex>
       </Flex>

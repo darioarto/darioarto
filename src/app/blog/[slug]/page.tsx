@@ -6,8 +6,11 @@ import { formatDate } from "@/utils/formatDate";
 import { getPosts } from "@/utils/utils";
 import { Metadata } from 'next';
 
+// Only the generated slugs exist; anything else is a real 404.
+export const dynamicParams = false;
+
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
-  const posts = getPosts(["src", "app", "blog", "posts"]);
+  const posts = getPosts("blog");
   return posts.map((post) => ({
     slug: post.slug,
   }));
@@ -21,7 +24,7 @@ export async function generateMetadata({
   const routeParams = await params;
   const slugPath = Array.isArray(routeParams.slug) ? routeParams.slug.join('/') : routeParams.slug || '';
 
-  const posts = getPosts(["src", "app", "blog", "posts"])
+  const posts = getPosts("blog")
   let post = posts.find((post) => post.slug === slugPath);
 
   if (!post) return {};
@@ -41,7 +44,7 @@ export default async function Blog({
   const routeParams = await params;
   const slugPath = Array.isArray(routeParams.slug) ? routeParams.slug.join('/') : routeParams.slug || '';
 
-  let post = getPosts(["src", "app", "blog", "posts"]).find((post) => post.slug === slugPath);
+  let post = getPosts("blog").find((post) => post.slug === slugPath);
 
   if (!post) {
     notFound();
@@ -78,7 +81,7 @@ export default async function Blog({
           <Heading variant="display-strong-s">{post.metadata.title}</Heading>
           <Row gap="12" vertical="center">
             {avatars.length > 0 && <AvatarGroup size="s" avatars={avatars} />}
-            <Text variant="body-default-s" onBackground="neutral-weak">
+            <Text family="code" variant="label-default-s" onBackground="neutral-weak">
               {post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
             </Text>
           </Row>

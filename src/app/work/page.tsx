@@ -1,6 +1,7 @@
 import { Column, Meta, Schema } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
 import { Projects } from "@/components/work/Projects";
+import { SectionHeader } from "@/components";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -28,7 +29,14 @@ export default function Work() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Projects />
+      <SectionHeader
+        as="h1"
+        eyebrow="$ ls ~/projects"
+        title="Projects"
+        description="Infrastructure, communities and products I have built or run."
+        marginBottom="40"
+      />
+      <Projects columns="2" />
     </Column>
   );
 }

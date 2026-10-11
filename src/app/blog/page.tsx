@@ -1,5 +1,6 @@
-import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
+import { Column, Meta, Schema } from "@once-ui-system/core";
 import { Posts } from "@/components/blog/Posts";
+import { SectionHeader } from "@/components";
 import { baseURL, blog, person } from "@/resources";
 
 export async function generateMetadata() {
@@ -14,7 +15,7 @@ export async function generateMetadata() {
 
 export default function Blog() {
   return (
-    <Column maxWidth="s">
+    <Column maxWidth="m">
       <Schema
         as="blogPosting"
         baseURL={baseURL}
@@ -28,15 +29,14 @@ export default function Blog() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Heading marginBottom="l" variant="display-strong-s">
-        {blog.title}
-      </Heading>
-      <Column
-				fillWidth flex={1}>
-				<Posts range={[1,1]} thumbnail direction="column"/>
-				<Posts range={[2,3]} thumbnail/>
-				<Posts range={[4]} columns="2"/>
-			</Column>
+      <SectionHeader
+        as="h1"
+        eyebrow="$ ls ~/blog"
+        title={blog.title}
+        description="Guides and notes on Minecraft servers, infrastructure and the tools I use."
+        marginBottom="40"
+      />
+      <Posts columns="2" />
     </Column>
   );
 }

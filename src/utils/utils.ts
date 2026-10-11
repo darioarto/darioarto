@@ -18,6 +18,11 @@ type Metadata = {
   tag?: string;
   team: Team[];
   link?: string;
+  // Projects only
+  role?: string;
+  period?: string;
+  status?: string;
+  stack: string[];
 };
 
 import { notFound } from 'next/navigation';
@@ -44,9 +49,13 @@ function readMDXFile(filePath: string) {
     summary: data.summary || "",
     image: data.image || "",
     images: data.images || [],
-    tag: data.tag || [],
+    tag: data.tag || "",
     team: data.team || [],
     link: data.link || "",
+    role: data.role || "",
+    period: data.period || "",
+    status: data.status || "",
+    stack: data.stack || [],
   };
 
   return { metadata, content };
@@ -66,7 +75,12 @@ function getMDXData(dir: string) {
   });
 }
 
-export function getPosts(customPath = ["", "", "", ""]) {
-  const postsDir = path.join(process.cwd(), ...customPath);
-  return getMDXData(postsDir);
+// Static paths so the bundler only traces the content folders, not the whole project.
+const contentDirs = {
+  blog: path.join(process.cwd(), "src", "app", "blog", "posts"),
+  work: path.join(process.cwd(), "src", "app", "work", "projects"),
+};
+
+export function getPosts(type: keyof typeof contentDirs) {
+  return getMDXData(contentDirs[type]);
 }

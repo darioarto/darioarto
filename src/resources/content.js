@@ -47,7 +47,7 @@ const home = {
   headline: <>Building infrastructure and communities since 2020.</>,
   featured: {
     display: true,
-    title: <>Current focus: <strong className="ml-4">XeroHost</strong></>,
+    title: "Currently COO & SysAdmin at XeroHost",
     href: "/work/xerohost",
   },
   subline: (
@@ -94,7 +94,7 @@ const about = {
     experiences: [
       {
         company: "XeroHost",
-        timeframe: "2025 - Present",
+        timeframe: "2025 — Present",
         role: "COO & SysAdmin",
         achievements: [
           <>
@@ -112,7 +112,7 @@ const about = {
       },
       {
         company: "Wark Corp.",
-        timeframe: "2023 - Present",
+        timeframe: "2023 — Present",
         role: "Founder & CEO",
         achievements: [
           <>
@@ -136,7 +136,7 @@ const about = {
       },
       {
         company: "CosmixMC Network",
-        timeframe: "2023 - Present",
+        timeframe: "2023 — Present",
         role: "Founder, Owner & Lead Developer",
         achievements: [
           <>
@@ -152,7 +152,7 @@ const about = {
       },
       {
         company: "Junta Vecinal de Verdeña",
-        timeframe: "2026 - Present",
+        timeframe: "2026 — Present",
         role: "Website & Social Media Management",
         achievements: [
           <>Management of the village’s website and its presence on social media.</>,
@@ -176,51 +176,40 @@ const about = {
     title: "Skills",
     skills: [
       {
-        title: "Systems Administration & Infrastructure",
-        description: (
-          <>
-            Linux, VirtFusion, WHMCS, Pterodactyl and Velocity, as well as databases such as
-            MySQL, MariaDB and PostgreSQL.
-          </>
-        ),
+        title: "Systems & Infrastructure",
+        description: <>Running Linux servers and hosting platforms for VPS and game servers.</>,
+        tags: ["Linux", "VirtFusion", "WHMCS", "Pterodactyl", "Velocity", "MySQL", "MariaDB", "PostgreSQL"],
         // optional: leave the array empty if you don't want to display images
         images: [],
       },
       {
         title: "Networking & Security",
-        description: (
-          <>
-            Cloudflare Zero Trust, Kali Linux and basic penetration testing, SSH and secure access
-            best practices.
-          </>
-        ),
+        description: <>Securing access to infrastructure and testing it for weaknesses.</>,
+        tags: ["Cloudflare Zero Trust", "Kali Linux", "Pentesting (basic)", "SSH", "Access best practices"],
         images: [],
       },
       {
-        title: "Next.js, PHP, HTML & CSS",
+        title: "Web Development",
         description: <>Building and configuring websites across different frameworks and languages.</>,
+        tags: ["Next.js", "PHP", "HTML", "CSS"],
         images: [],
       },
       {
-        title: "Java, JavaScript & Python",
-        description: (
-          <>
-            Programming across the Java ecosystem, including the development of Minecraft plugins,
-            as well as JavaScript and Python.
-          </>
-        ),
+        title: "Programming",
+        description: <>Software across the Java ecosystem, including Minecraft plugins.</>,
+        tags: ["Java", "JavaScript", "Python"],
         images: [],
       },
       {
         title: "Mobile Development",
-        description: <>Native iOS development with Swift and SwiftUI.</>,
+        description: <>Native iOS development.</>,
+        tags: ["Swift", "SwiftUI"],
         images: [],
       },
       {
         title: "Management & Communication",
-        description: (
-          <>Team coordination, customer support, marketing and community management.</>
-        ),
+        description: <>Leading teams and the communities around them.</>,
+        tags: ["Team coordination", "Customer support", "Marketing", "Community management"],
         images: [],
       },
     ],
